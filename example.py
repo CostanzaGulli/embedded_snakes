@@ -53,7 +53,7 @@ while True:
                 y = accel.y_axis_reading()
                 z = accel.z_axis_reading()                    
                 print ('x: '+str(x)+' y: '+str(y)+' z: '+str(z))
-                firebase.post("RaspberryPi",{"x":x,"y":y," z":z}) 
+                #firebase.post("RaspberryPi",{"x":x,"y":y," z":z}) 
                 time.sleep(.25)
         except:
             print('Stopping Raw X,Y, & Z data output \n')
