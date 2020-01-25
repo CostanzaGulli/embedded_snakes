@@ -30,7 +30,7 @@ class Accelerometer:
         self.mode = mode
         self.scale = 2
         self.odr = 50
-        self.temperatureOffset = +20        
+        self.temperatureOffset = 0        
 
         if self.mode == 'spi':
             self.spi=spidev.SpiDev()

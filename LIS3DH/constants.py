@@ -1,0 +1,17 @@
+ACCELEROMETER_ADDRESS=0x18
+
+#Control registers
+REGISTER_1=0x20
+REGISTER_2=0x21
+REGISTER_3=0x22
+REGISTER_4=0x23
+
+#X-axis readout
+X_LSB=0x28
+X_MSB=0x29
+#Y-axis readout
+Y_LSB=0x2A
+Y_MSB=0x2B
+#Z-axis readout
+Z_LSB=0x2C
+Z_MSB=0x2D
