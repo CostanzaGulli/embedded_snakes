@@ -1,7 +1,7 @@
 import http.server
 import socketserver
 
-class MyHandler(http.server.BaseHTTPRequestHandler):
+class HTTPHandler(http.server.BaseHTTPRequestHandler):
     def do_HEAD(self):
         self.send_response(200)
         self.end_headers()
@@ -14,3 +14,5 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
         """Respond to a POST request"""
         self.send_response(200)
         self.end_headers()
+        self.
+    
