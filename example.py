@@ -1,8 +1,8 @@
 from Libraries import LIS3DH
-import time, spidev, sys, smbus
+import time, sys, smbus, spidev
 from time import sleep
 import datetime
-from firebase import firebase
+#from firebase import firebase
 
 import json
 import os 
@@ -26,7 +26,7 @@ accel.set_scale()
 # to 15 times to get a sensor reading (waiting 2 seconds between each retry).
 
 
-firebase = firebase.FirebaseApplication('https://embedded-snakes.firebaseio.com/', None)
+#firebase = firebase.FirebaseApplication('https://embedded-snakes.firebaseio.com/', None)
 #firebase.put("/dht", "/temp", "0.00")
 
 while True:
@@ -64,4 +64,3 @@ while True:
 # LIS3DHTR
 # This code is designed to work with the LIS3DHTR_I2CS I2C Mini Module available from dcubestore.com
 # http://dcubestore.com/product/lis3dhtr-3-axis-accelerometer-digital-output-motion-sensor-i%C2%B2c-mini-module/
-
