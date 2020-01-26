@@ -1,6 +1,6 @@
 import smbus
 import time
-import LIS3DH.constants as constants
+import Accelerometer.constants as constants
 
 # Get I2C bus
 bus = smbus.SMBus(1)
@@ -51,7 +51,8 @@ while True:
         zAccl -= 65536
 
     # Output data to screen
+    print ('x: '+str(xAccl)+' y: '+str(yAccl)+' z: '+str(zAccl)) 
 
-    print("Acceleration in X-Axis : %d" %xAccl)
-    print("Acceleration in Y-Axis : %d" %yAccl)
-    print("Acceleration in Z-Axis : %d" %zAccl)
+    ##print("Acceleration in X-Axis : %d" %xAccl)
+    ##print("Acceleration in Y-Axis : %d" %yAccl)
+    ##print("Acceleration in Z-Axis : %d" %zAccl)
