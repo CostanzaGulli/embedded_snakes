@@ -9,7 +9,7 @@ I2C_Address= constants.ACCELEROMETER_ADDRESS
 # Select control register1, 0x20(32)
 #		0x27(39)	Power ON mode, Data rate selection = 10 Hz
 #					X, Y, Z-Axis enabled
-bus.write_byte_data(I2C_Address, constants.REGISTER_1, 0x27)
+bus.write_byte_data(I2C_Address, constants.REGISTER_1, 0x27) 
 # LIS3DHTR address, 0x18(24)
 # Select control register4, 0x23(35)
 #		0x00(00)	Continuous update, Full-scale selection = +/-2G
@@ -43,7 +43,7 @@ while True:
     # Read data back from 0x2C(44), 2 bytes
     # Z-Axis LSB, Z-Axis MSB
     data0 = bus.read_byte_data(I2C_Address, constants.Z_LSB)
-    data1 = bus.read_byte_data(I2C_Address, constants.Z_LSB)
+    data1 = bus.read_byte_data(I2C_Address, constants.Z_MSB)
 
     # Convert the data
     zAccl = data1 * 256 + data0
