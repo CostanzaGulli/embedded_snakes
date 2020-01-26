@@ -32,8 +32,7 @@ while True:
                     #json_data=json.dumps({1})
                     #URL = "http://aaf0cac7.ngrok.io" # api-endpoint 
                     #r = requests.post(url = URL, params = json_data) # sending get request and saving the response as response object
-        if action_done is False:
+        #if action_done is False:
             #json_data=json.dumps({0})
             #URL = "http://aaf0cac7.ngrok.io"
             #r = requests.post(url = URL, params = json_data)
-
