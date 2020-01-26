@@ -1,4 +1,4 @@
-import Accelerometer.constants as constants
+import constants
 import smbus
 
 def read_xyz():
