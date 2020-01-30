@@ -5,7 +5,8 @@ def read_xyz():
     bus = smbus.SMBus(1)
     I2C_Address= constants.ACCELEROMETER_ADDRESS
 
-    data_rate = 0b0010
+    #data_rate = 0b0010
+    data_rate = 0b0011
     x_enable = 0b1
     y_enable = 0b1
     z_enable = 0b1
