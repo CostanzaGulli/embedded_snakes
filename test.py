@@ -27,7 +27,7 @@ client = mqtt.Client()
 
 #client.connect("test.mosquitto.org", 1883, 60) #connect(host, port=1883, keepalive=60, bind_address="")
 #client.connect("test.mosquitto.org", 1883)
-client.connect("146.169.151.183", 1883)
+client.connect("146.169.155.107", 1883)
 client.on_connect = on_connect
 
 mqtt.error_string('error')
@@ -37,7 +37,7 @@ client.publish("IC.embedded/snakes/test","hello from pi")
 #mqtt.error_string(MSG_INFO.rc) #MSG_INFO is result of publish()
 #mqtt.error_string('mqtt_errno')
 #print(error+'\n')
-time.sleep(10) 
+time.sleep(1) 
 
 #client.subscribe("IC.embedded/snakes/test")
 #client.on_message = on_message
@@ -47,5 +47,5 @@ time.sleep(10)
 def on_message_print(client, userdata, message):
     print("%s %s" % (message.topic, message.payload))
 
-subscribe.callback(on_message_print, "IC.embedded/snakes/test", hostname="146.169.151.183")
+subscribe.callback(on_message_print, "IC.embedded/snakes/test", hostname="146.169.155.107")
 
