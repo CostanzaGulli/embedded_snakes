@@ -31,13 +31,14 @@ import NucleoIcons from "views/NucleoIcons.js";
 import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
+import TeamView from "views/TeamView.js"
 // others
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route 
-        path="/index" 
+        path="/documentation" 
         render={props => <Index {...props} />} 
       />
       <Route
@@ -45,11 +46,15 @@ ReactDOM.render(
         render={props => <NucleoIcons {...props} />}
       />
       <Route
-        path="/landing-page"
+        path="/index"
         render={props => <LandingPage {...props} />}
       />
       <Route
-        path="/profile-page"
+        path="/team"
+        render={props => <TeamView {...props} />}
+      />
+      <Route
+        path="/profile"
         render={props => <ProfilePage {...props} />}
       />
       <Route
