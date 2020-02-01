@@ -34,7 +34,7 @@ import {
 } from "reactstrap";
 
 function IndexNavbar() {
-  const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
+  const [navbarColor, setNavbarColor] = React.useState("");
   const [navbarCollapse, setNavbarCollapse] = React.useState(false);
 
   const toggleNavbarCollapse = () => {
@@ -42,27 +42,7 @@ function IndexNavbar() {
     document.documentElement.classList.toggle("nav-open");
   };
 
-  React.useEffect(() => {
-    const updateNavbarColor = () => {
-      if (
-        document.documentElement.scrollTop > 299 ||
-        document.body.scrollTop > 299
-      ) {
-        setNavbarColor("");
-      } else if (
-        document.documentElement.scrollTop < 300 ||
-        document.body.scrollTop < 300
-      ) {
-        setNavbarColor("navbar-transparent");
-      }
-    };
-
-    window.addEventListener("scroll", updateNavbarColor);
-
-    return function cleanup() {
-      window.removeEventListener("scroll", updateNavbarColor);
-    };
-  });
+  
   return (
     <Navbar className={classnames("fixed-top", navbarColor)} expand="lg">
       <Container>
@@ -73,7 +53,7 @@ function IndexNavbar() {
             target="_blank"
             title="Coded by Creative Tim"
           >
-            Paper Kit React
+            Embedded Snakes
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
@@ -94,11 +74,11 @@ function IndexNavbar() {
         >
           <Nav navbar>
             <NavItem>
-                <NavLink to="/about"
+                <NavLink to="/documentation"
                 tag={Link}
                 title="Follow us on Twitter"
                 >
-                About
+                documentation
                 <p className="d-lg-none">Twitter</p>
               </NavLink>
             </NavItem>
@@ -112,23 +92,21 @@ function IndexNavbar() {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/contact"
+              <NavLink to="/app"
                 tag={Link}
                 title="Follow us on Twitter"
               >
-                Contact
+                App
                 <p className="d-lg-none">Twitter</p>
               </NavLink>
             </NavItem>
-            
-            
-            
             <NavItem>
-              <NavLink
-                href="https://demos.creative-tim.com/paper-kit-react/#/documentation?ref=pkr-index-navbar"
-                target="_blank"
+              <NavLink to="/profile"
+                tag={Link}
+                title="Follow us on Twitter"
               >
-                <i className="nc-icon nc-book-bookmark" /> Documentation
+                Profile
+                <p className="d-lg-none">Twitter</p>
               </NavLink>
             </NavItem>
           </Nav>
