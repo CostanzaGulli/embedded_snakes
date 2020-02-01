@@ -20,7 +20,7 @@ import socketIOClient from "socket.io-client";
 import GameNavbar from "components/Navbars/GameNavbar.js";
 import GameHeader from "components/Headers/GameHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
-
+import UserDataPanel from "views/panels/UserDataPanel.js";
 import React, { useState, useEffect } from 'react';
 import { Button,Container } from "reactstrap";
 
@@ -45,8 +45,9 @@ const App = () => {
   return (
     <>
       <GameNavbar />
-      <GameHeader />
-      <div>
+      <div style={{height:"100px"}}></div>
+      <UserDataPanel/>
+      {/*<div style={{backgroundColor: 'info'}}>
       <p>You clicked {count} times</p>
       <Button onClick={() => setCount(count + 1)}>
         Click me
@@ -54,14 +55,15 @@ const App = () => {
       <Button onClick={() => mountSocket()}>
         Mount socket
       </Button>
-      <div style={{ textAlign: "center", height:"1000px" }}>
+      <div style={{ textAlign: "center"}}>
         {response
             ? <p>
               The temperature in Florence is: {response} °F
             </p>
             : <p>Loading...</p>}
       </div>
-    </div>
+    </div>*/}
+
    </> 
   );
 }
