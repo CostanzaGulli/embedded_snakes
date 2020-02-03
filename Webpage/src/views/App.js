@@ -18,8 +18,6 @@
 */
 import socketIOClient from "socket.io-client";
 import GameNavbar from "components/Navbars/GameNavbar.js";
-import GameHeader from "components/Headers/GameHeader.js";
-import DemoFooter from "components/Footers/DemoFooter.js";
 import UserDataPanel from "views/panels/UserDataPanel.js";
 import React, { useState, useEffect } from 'react';
 import { Button,Container } from "reactstrap";
@@ -47,6 +45,7 @@ const App = () => {
       <GameNavbar />
       <div style={{height:"100px"}}></div>
       <UserDataPanel/>
+      
       {/*<div style={{backgroundColor: 'info'}}>
       <p>You clicked {count} times</p>
       <Button onClick={() => setCount(count + 1)}>

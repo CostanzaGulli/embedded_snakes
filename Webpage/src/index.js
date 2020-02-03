@@ -19,6 +19,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
+import Firebase, { FirebaseContext } from './components/Firebase';
 
 // styles
 import "assets/css/bootstrap.min.css";
