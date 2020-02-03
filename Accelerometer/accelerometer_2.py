@@ -1,23 +1,20 @@
 #accelerometer
-#import LIS3DH
 import time, spidev, sys, smbus
 import accelerometer_fn
+from statistics import stdev
 
-#http
-import requests 
+import mqtt_connection_fn
 
-#ADD NEGATIVE DIFFERENCES AS WELL
+import RPi.GPIO as GPIO
 
-accel = LIS3DH.Accelerometer('i2c',i2cAddress = 0x18)
-accel.set_ODR(odr=50, powerMode='normal')
-accel.axis_enable(x='on',y='on',z='on')
-#accel.interrupt_high_low('high')
-#accel.latch_interrupt('on')
-#accel.set_BDU('on')
-#accel.set_scale()
+#set up mqtt connection
+mqtt_connection_fn.mqtt_connect() 
 
-#while True:
-    
+#set input pins
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
+#ADD NEGATIVE DIFFERENCES AS WELL   
 action = int(input('Pick action: '))
 
 if action == 1: #shake
@@ -26,35 +23,32 @@ if action == 1: #shake
     elapsed_time = time.time() - start_action_time
     print ('elapsed time: '+str(elapsed_time)+'\n')
     action_done = False
-    
-    x_prev, y_prev, z_prev = accelerometer_fn.read_xyz()                 
-    #print ('x: '+str(x_prev)+' y: '+str(y_prev)+' z: '+str(z_prev)+'\n')
-    elapsed_time = time.time() - start_action_time
 
-    #while action_done is False or elapsed_time >= 3:
-    while elapsed_time <= 3:                  
+    while (action_done is False) and (elapsed_time <= 3):
+        x_out = []
+        y_out = []
+        z_out = []
+        for i in range(0,29):
             x, y, z = accelerometer_fn.read_xyz()
-            #time.sleep(.25)                   
-            #print ('x: '+str(x)+' y: '+str(y)+' z: '+str(z)+'\n')
-            elapsed_time = time.time() - start_action_time
-            #print ('elapsed time: '+str(elapsed_time)+'\n')
-            if (x_prev-x)>20000:
-                action_done = True
-                print ('action 1 done X\n')
-                #json_data=json.dumps({1})
-                #URL = "http://aaf0cac7.ngrok.io" # api-endpoint 
-                #r = requests.post(url = URL, params = json_data) # sending get request and saving the response as response object
-            if (y_prev-y)>20000:
-                action_done = True
-                print ('action 1 done Y\n')
-            if (z_prev-z)>20000:
-                action_done = True
-                print ('action 1 done Z\n')
-            x_prev = x
-            y_prev = y
-            z_prev = z
+            x_out.append(x)
+            y_out.append(y)
+            z_out.append(z)
+        x_stdev = stdev(x_out)
+        y_stdev = stdev(y_out)
+        z_stdev = stdev(z_out)
+        print ('x: '+str(x_stdev)+' y: '+str(y_stdev)+' z: '+str(z_stdev)+'\n')#testing
+        if x_stdev > 10000 or y_stdev > 10000 or z_stdev > 10000:
+            action_done = True
+            print ('action 1 done\n')#testing
+            mqtt_connection_fn.mqtt_publish("IC.embedded/snakes/test","action 1 done")
+        x_out.clear()
+        y_out.clear()
+        z_out.clear()
+        elapsed_time = time.time() - start_action_time
+
     if action_done is False:
-        print ('no movement\n')
+        print ('no action 1\n')#testing
+        mqtt_connection_fn.mqtt_publish("IC.embedded/snakes/test","no action 1")
         #json_data=json.dumps({0})
         #URL = "http://aaf0cac7.ngrok.io"
         #r = requests.post(url = URL, params = json_data)
@@ -106,4 +100,22 @@ if action == 2: #big move - slower
         print ('no movement\n')
         #json_data=json.dumps({0})
         #URL = "http://aaf0cac7.ngrok.io"
-        #r = requests.post(url = URL, params = json_data)        
+        #r = requests.post(url = URL, params = json_data)    
+        # 
+
+if action == 3:
+    start_action_time = time.time()
+    elapsed_time = time.time() - start_action_time
+    action_done = False
+
+    while (action_done is False) and (elapsed_time <= 10):
+        input_state = GPIO.input(10)
+        elapsed_time = time.time() - start_action_time
+        if input_state == True:
+            print('action 3 done - Button Pressed')
+            action_done = True
+            mqtt_connection_fn.mqtt_publish("IC.embedded/snakes/test","action 3 done")
+    if action_done is False:
+        print ('no action 3\n')#testing
+        mqtt_connection_fn.mqtt_publish("IC.embedded/snakes/test","no action 3")
+

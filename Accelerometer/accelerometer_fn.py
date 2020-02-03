@@ -3,10 +3,10 @@ import smbus
 
 def read_xyz():
     bus = smbus.SMBus(1)
-    I2C_Address= constants.ACCELEROMETER_ADDRESS
+    I2C_Address = constants.ACCELEROMETER_ADDRESS
 
     #data_rate = 0b0010
-    data_rate = 0b0011
+    data_rate = 0b0111
     x_enable = 0b1
     y_enable = 0b1
     z_enable = 0b1
@@ -17,7 +17,7 @@ def read_xyz():
     bus.write_byte_data(I2C_Address, constants.CTRL_REG1, control1) #write_byte_data(address, offset, data)
     bus.write_byte_data(I2C_Address, constants.CTRL_REG4, control2)
 
-    data_x0 = bus.read_byte_data(I2C_Address, constants.X_LSB) #check address-offset
+    data_x0 = bus.read_byte_data(I2C_Address, constants.X_LSB)
     data_x1 = bus.read_byte_data(I2C_Address, constants.X_MSB)
     data_y0 = bus.read_byte_data(I2C_Address, constants.Y_LSB)
     data_y1 = bus.read_byte_data(I2C_Address, constants.Y_MSB)

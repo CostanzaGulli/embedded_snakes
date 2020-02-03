@@ -20,13 +20,13 @@ def on_message_print(client, userdata, message):
 
 client = mqtt.Client()
 
-RETURN_CODE = client.connect("test.mosquitto.org", 1883) #connect(host, port=1883, keepalive=60, bind_address="")
+return_code = client.connect("test.mosquitto.org", 1883) #connect(host, port=1883, keepalive=60, bind_address="")
 client.on_connect = on_connect
-if RETURN_CODE == 0:
+if return_code == 0:
     print("connection succesful\n")
 else:
-    error_string = mqtt.error_string(RETURN_CODE)
-    print("the error is "+error_string+" code "+RETURN_CODE+'\n')
+    error_string = mqtt.error_string(return_code)
+    print("the error is "+error_string+" code "+return_code+'\n')
 
 MSG_INFO = client.publish("IC.embedded/snakes/test","hello from pi")
 publish_out = mqtt.error_string(MSG_INFO.rc)
@@ -35,8 +35,9 @@ print("publish status: "+publish_out+"\n")
 time.sleep(1) 
 
 client.on_message = on_message
-client.subscribe("IC.embedded/snakes/#")
+#client.subscribe("IC.embedded/snakes/#")
 client.loop()
-#callback(callback, topics, qos=0, userdata=None, hostname="146.169.151.183", port=1883, client_id="", keepalive=60, will=None, auth=None, tls=None, protocol=mqtt.MQTTv311)
+#client.subscribe("IC.embedded/#")
 
+#callback(callback, topics, qos=0, userdata=None, hostname="146.169.151.183", port=1883, client_id="", keepalive=60, will=None, auth=None, tls=None, protocol=mqtt.MQTTv311)
 sub.callback(on_message_print, "IC.embedded/#", hostname="test.mosquitto.org")
