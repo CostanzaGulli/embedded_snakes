@@ -41,8 +41,3 @@ def mqtt_subscribe(host_name, path, on_message_func):
     client.subscribe(path)
     client.loop_forever()
 
-    #sub.callback(on_message_print, path, hostname=host_name)
-
-#mqtt_connect()
-#mqtt_subscribe("test.mosquitto.org","IC.embedded/snakes/test",on_message)
-
