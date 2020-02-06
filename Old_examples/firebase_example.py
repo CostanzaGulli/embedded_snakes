@@ -35,7 +35,6 @@ else:
 def update_firebase():
     data = {"temp": 0, "humidity": 1.0}
     firebase.post('/sensor/dht', data)
-	
 
 while True:
 		update_firebase()
