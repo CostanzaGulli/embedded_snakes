@@ -30,39 +30,11 @@ const App = () => {
       document.body.classList.remove("app");
     };
   });
-  // Declare a new state variable, which we'll call "count"
-  const [count, setCount] = useState(0);
-  const [response, setResponse] = useState(0);
-  const [endpoint, setEndpoint] = useState("localhost:4001");
-
-  function mountSocket() {
-    const socket = socketIOClient(endpoint);
-    socket.on("FromAPI", data => {setResponse(data) });
-  }
-
   return (
     <>
       <GameNavbar />
       <div style={{height:"100px"}}></div>
       <UserDataPanel/>
-      
-      {<div style={{backgroundColor: 'info'}}>
-      <p>You clicked {count} times</p>
-      <Button onClick={() => setCount(count + 1)}>
-        Click me
-      </Button>
-      <Button onClick={() => mountSocket()}>
-        Mount socket
-      </Button>
-      <div style={{ textAlign: "center"}}>
-        {response
-            ? <p>
-              The temperature in Florence is: {response} °F
-            </p>
-            : <p>Loading...</p>}
-      </div>
-    </div>}
-
    </> 
   );
 }
