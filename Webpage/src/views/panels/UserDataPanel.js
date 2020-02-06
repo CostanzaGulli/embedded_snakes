@@ -78,65 +78,6 @@ const UserPanel = () => {
           setAvgTimes({...avgTimes});
         });
     }
-    
-    const db = firebase.firestore();
-    function add_info(){
-      db.collection("moves").add({
-        user: "Eirik",
-        move: "Shake",
-        time: 1.2,
-        success: true
-      })
-      .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-      })
-      .catch(function(error) {
-        console.error("Error adding document: ", error);
-      });
-    }
-    function read_info(){
-      db.collection("moves").where("user", "==", "Eirik").get()
-      .then(function(querySnapshot) {
-          querySnapshot.forEach(function(doc) {
-              // doc.data() is never undefined for query doc snapshots
-              console.log(doc.id, " => ", doc.data());
-          });
-      })
-      .catch(function(error) {
-          console.log("Error getting documents: ", error);
-      });
-      
-    }
-    let array = []
-
-    function read_move_data(){
-      var total_move_count = Number(0);
-      var succesful_move_count  = Number(0);
-      var aggregated_move_time = Number(0);
-      const moves=["Shake","Tap","Shout Out","UpsideDown"]
-      var move;
-      db.collection("moves").where("user", "==", userId).get()
-      .then(function(querySnapshot) {
-        for(move of moves){
-          total_move_count = 0;
-          succesful_move_count  = 0;
-          aggregated_move_time = 0;
-          querySnapshot.forEach(function(doc) {
-            if (doc.data()["move"]==move){
-              total_move_count=total_move_count+1;
-              aggregated_move_time+= doc.data()["time"];
-              if(doc.data()["success"]==true){
-                succesful_move_count=succesful_move_count+1;
-              }
-            }
-          });
-          successRates[move]=succesful_move_count/total_move_count*100;
-          avgTimes[move]=aggregated_move_time/total_move_count;
-        }
-      setSuccessRates({...successRates});
-      setAvgTimes({...avgTimes});
-      });
-    }
     return (
       <>
         <div className="game-statistics">
@@ -164,7 +105,6 @@ const UserPanel = () => {
             <h2>Game statistics</h2>
           <Row style={{height:"3em"}}>
               <Col md="6">
-              
               <div style={{ textAlign: "center", height:"0.5em"}}>
               </div>
                 <Progress
@@ -380,17 +320,7 @@ const UserPanel = () => {
               </Col>
             </Row>
           </Container>
-        </div>{" "}
-        <Button onClick={() => add_info()}>
-          Add info
-        </Button>
-        
-        <Button onClick={() => {read_move_data();}}>
-          Read Success Rate
-        </Button>
-        <Button onClick={() => read_info()}>
-          Read data
-        </Button>
+        </div>{" "}      
     );
       </>
     );
