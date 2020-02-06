@@ -17,7 +17,9 @@ require("firebase/firestore");
 const UserPanel = () => {
     const [successRates, setSuccessRates] = useState({"Shake":0,"Tap":0,"Shout Out":0,"UpsideDown":0});
     const [avgTimes, setAvgTimes] = useState({"Shake":0,"Tap":0,"Shout Out":0,"UpsideDown":0});
-
+    const [winRate,setWinRate]= useState(0);
+    const [avgScore,setAvgScore]= useState(0);
+    const [avgTime,setAvgTime]= useState(0);
     const [firebase_initialized,setFirebaseInitialized] = useState(false);
     const [userId,setUserId] = useState("Eirik");
     const moves=["Shake","Tap","Shout Out","UpsideDown"]
@@ -52,6 +54,9 @@ const UserPanel = () => {
       var total_move_count = Number(0);
       var succesful_move_count  = Number(0);
       var aggregated_move_time = Number(0);
+      var aggegated_total_time= Number(0);
+      var aggegated_total_number_of_moves= Number(0);
+
       var move;
       var rootRef =database.ref("moves/"+userId);
       rootRef.once("value")
@@ -61,11 +66,12 @@ const UserPanel = () => {
               total_move_count = 0;
               succesful_move_count  = 0;
               aggregated_move_time = 0;
-              
               snapshot.forEach(function(child) {
                 var data=child.toJSON()
                 if (data["move"]==move){
                   total_move_count=total_move_count+1;
+                  aggegated_total_number_of_moves=aggegated_total_number_of_moves+1;
+                  aggegated_total_time+= data["time"];
                   aggregated_move_time+= data["time"];
                   if(data["success"]==true){
                     succesful_move_count=succesful_move_count+1;
@@ -75,13 +81,17 @@ const UserPanel = () => {
               successRates[move]=succesful_move_count/total_move_count*100;
               avgTimes[move]=aggregated_move_time/total_move_count;  
             }
+            setAvgTime(aggegated_total_time/aggegated_total_number_of_moves);
             setSuccessRates({...successRates});
             setAvgTimes({...avgTimes});
           }
           else{
+            setAvgTime(0);
             setSuccessRates({"Shake":0,"Tap":0,"Shout Out":0,"UpsideDown":0});
             setAvgTimes({"Shake":0,"Tap":0,"Shout Out":0,"UpsideDown":0});
           }
+          var rootRef =database.ref("games/"+userId);
+
         });
     }
     return (
@@ -94,7 +104,7 @@ const UserPanel = () => {
                 <FormGroup className="has-success">
                       <Input
                         className="form-control-success"
-                        defaultValue="Success"
+                        defaultValue={userId}
                         id="inputDanger1"
                         type="text"
                         onInput={(text) => {setUserId(text.target.value);
@@ -115,15 +125,15 @@ const UserPanel = () => {
               </div>
                 <Progress
                   max="100"
-                  value={successRates["Shake"]}
+                  value={winRate}
                   barClassName="win-rate"
                 />
               </Col>
               <Col>
-                <b>{successRates["Shake"]} %</b>
+                <b>{winRate} %</b>
               </Col>
               <Col>
-                <b>Upside down!</b>
+                <b>Win rate!</b>
               </Col>
             </Row>
             
@@ -131,57 +141,13 @@ const UserPanel = () => {
               <Col md="6">
               <div style={{ textAlign: "center", height:"0.5em"}}>
               </div>
-              <Progress max="100" value="50" barClassName="progress-bar-info" />
+              <Progress max="5" value={avgTime} barClassName="progress-bar-info" />
               </Col>
               <Col>
-                <b>50 %</b>
+                <b>{avgTime} s</b>
               </Col>
               <Col>
-                <b>Shout out!</b>
-              </Col>
-            </Row>
-            <Row style={{height:"3em"}}>
-              <Col md="6">
-              <div style={{ textAlign: "center", height:"0.5em"}}>
-              </div>
-              <Progress
-                  max="100"
-                  value="75"
-                  barClassName="progress-bar-danger"
-                />
-              </Col>
-              <Col>
-                <b>75 %</b>
-              </Col>
-              <Col>
-                <b>Tap it!</b>
-              </Col>
-            </Row>
-            <Row style={{height:"3em"}}>
-              <Col md="6">
-              <div style={{ textAlign: "center", height:"0.5em"}}>
-              </div>
-              <Progress multi>
-                  <Progress bar max="100" value="15" />
-                  <Progress
-                    bar
-                    barClassName="progress-bar-success"
-                    max="100"
-                    value="30"
-                  />
-                  <Progress
-                    bar
-                    barClassName="progress-bar-warning"
-                    max="100"
-                    value="20"
-                  />
-                </Progress>
-              </Col>
-              <Col>
-                <b>65 %</b>
-              </Col>
-              <Col>
-                <b>Shake it</b>
+                <b>Average time</b>
               </Col>
             </Row>
             </Container>
