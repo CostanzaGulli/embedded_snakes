@@ -90,6 +90,30 @@ const UserPanel = () => {
             setSuccessRates({"Shake":0,"Tap":0,"Shout Out":0,"UpsideDown":0});
             setAvgTimes({"Shake":0,"Tap":0,"Shout Out":0,"UpsideDown":0});
           }
+      });
+      var gamesRef =database.ref("games/"+userId);
+      var game_count=Number(0);
+      var game_score=Number(0);
+      var game_win=Number(0);
+      gamesRef.once("value")
+        .then(function(snapshot){
+          if (snapshot.hasChildren()){
+              aggregated_move_time = 0;
+              snapshot.forEach(function(child) {
+                var data=child.toJSON()
+                game_count++;
+                if(data["win"]==true){
+                  game_win++;
+                }
+                game_score+=data["score"];
+              });
+            setAvgScore(game_score/game_count);
+            setWinRate(game_win/game_count*100);
+          }
+          else{
+            setAvgScore(0);
+            setWinRate(0);
+          }
           var rootRef =database.ref("games/"+userId);
 
         });
@@ -136,7 +160,23 @@ const UserPanel = () => {
                 <b>Win rate!</b>
               </Col>
             </Row>
-            
+            <Row style={{height:"3em"}}>
+              <Col md="6">
+              <div style={{ textAlign: "center", height:"0.5em"}}>
+              </div>
+                <Progress
+                  max="40000"
+                  value={avgScore}
+                  barClassName="win-rate"
+                />
+              </Col>
+              <Col>
+                <b>{avgScore}</b>
+              </Col>
+              <Col>
+                <b>Average Score!</b>
+              </Col>
+            </Row>
             <Row style={{height:"3em"}}>
               <Col md="6">
               <div style={{ textAlign: "center", height:"0.5em"}}>
