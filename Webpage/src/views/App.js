@@ -46,7 +46,7 @@ const App = () => {
       <div style={{height:"100px"}}></div>
       <UserDataPanel/>
       
-      {/*<div style={{backgroundColor: 'info'}}>
+      {<div style={{backgroundColor: 'info'}}>
       <p>You clicked {count} times</p>
       <Button onClick={() => setCount(count + 1)}>
         Click me
@@ -61,7 +61,7 @@ const App = () => {
             </p>
             : <p>Loading...</p>}
       </div>
-    </div>*/}
+    </div>}
 
    </> 
   );
