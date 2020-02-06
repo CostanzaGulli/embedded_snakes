@@ -6,13 +6,13 @@ from firebase import firebase
 
 firebase = firebase.FirebaseApplication('https://embedded-snakes.firebaseio.com/', None)
 
-def update_firebase(data):
-    print(data)
-    json = {"move":data["move"],
-            "time":data["time"],
-            "user":data["user"],
-            "success":data["success"]}
-    firebase.post('/moves/'+data["user"], data)
+def update_firebase(json_in):
+    print(json_in)
+    #json = {"move":data["move"],
+    #        "time":data["time"],
+    #        "user":data["user"],
+    #        "success":data["success"]}
+    firebase.post('/'+json_in["type"]+'/'+json_in["data"]["user"],json_in["data"])
 
 def on_message_func(client, userdata, msg):
     print(msg.topic+" "+str(msg.payload))
