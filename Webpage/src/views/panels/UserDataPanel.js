@@ -56,26 +56,32 @@ const UserPanel = () => {
       var rootRef =database.ref("moves/"+userId);
       rootRef.once("value")
         .then(function(snapshot){
-          for(move of moves){
-            total_move_count = 0;
-            succesful_move_count  = 0;
-            aggregated_move_time = 0;
-            
-            snapshot.forEach(function(child) {
-              var data=child.toJSON()
-              if (data["move"]==move){
-                total_move_count=total_move_count+1;
-                aggregated_move_time+= data["time"];
-                if(data["success"]==true){
-                  succesful_move_count=succesful_move_count+1;
+          if (snapshot.hasChildren()){
+            for(move of moves){
+              total_move_count = 0;
+              succesful_move_count  = 0;
+              aggregated_move_time = 0;
+              
+              snapshot.forEach(function(child) {
+                var data=child.toJSON()
+                if (data["move"]==move){
+                  total_move_count=total_move_count+1;
+                  aggregated_move_time+= data["time"];
+                  if(data["success"]==true){
+                    succesful_move_count=succesful_move_count+1;
+                  }
                 }
-              }
-            });
-            successRates[move]=succesful_move_count/total_move_count*100;
-            avgTimes[move]=aggregated_move_time/total_move_count;  
+              });
+              successRates[move]=succesful_move_count/total_move_count*100;
+              avgTimes[move]=aggregated_move_time/total_move_count;  
+            }
+            setSuccessRates({...successRates});
+            setAvgTimes({...avgTimes});
           }
-          setSuccessRates({...successRates});
-          setAvgTimes({...avgTimes});
+          else{
+            setSuccessRates({"Shake":0,"Tap":0,"Shout Out":0,"UpsideDown":0});
+            setAvgTimes({"Shake":0,"Tap":0,"Shout Out":0,"UpsideDown":0});
+          }
         });
     }
     return (
