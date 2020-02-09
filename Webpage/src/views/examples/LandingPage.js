@@ -177,22 +177,6 @@ function LandingPage() {
                   </CardBody>
                   <CardFooter className="text-center">
                     <Button
-                      className="btn-just-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-twitter" />
-                    </Button>
-                    <Button
-                      className="btn-just-icon btn-neutral ml-1"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-google-plus" />
-                    </Button>
-                    <Button
                       className="btn-just-icon btn-neutral ml-1"
                       color="link"
                       href="https://www.linkedin.com/in/eirik-albrektsen-9a0686147/"
@@ -226,22 +210,6 @@ function LandingPage() {
                   </CardBody>
                   <CardFooter className="text-center">
                     <Button
-                      className="btn-just-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-twitter" />
-                    </Button>
-                    <Button
-                      className="btn-just-icon btn-neutral ml-1"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-google-plus" />
-                    </Button>
-                    <Button
                       className="btn-just-icon btn-neutral ml-1"
                       color="link"
                       href="https://www.linkedin.com/in/valeria-cardazzi-18690b18a/"
@@ -274,22 +242,6 @@ function LandingPage() {
                     </p>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button
-                      className="btn-just-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-twitter" />
-                    </Button>
-                    <Button
-                      className="btn-just-icon btn-neutral ml-1"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-google-plus" />
-                    </Button>
                     <Button
                       className="btn-just-icon btn-neutral ml-1"
                       color="link"
