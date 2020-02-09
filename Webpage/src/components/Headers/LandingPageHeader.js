@@ -53,7 +53,7 @@ function LandingPageHeader() {
         <div className="filter" />
         <Container>
           <div className="motto text-center">
-            <h1>Example page</h1>
+            <h1>Smart ...</h1>
             <h3>Start designing your landing page here.</h3>
             <br />
             <Button

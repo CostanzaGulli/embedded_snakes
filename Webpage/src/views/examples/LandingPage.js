@@ -57,7 +57,7 @@ function LandingPage() {
           <Container>
             <Row>
               <Col className="ml-auto mr-auto" md="8">
-                <h2 className="title">Let's talk product</h2>
+                <h2 className="title">The product</h2>
                 <h5 className="description">
                   This is the paragraph where you can write more details about
                   your product. Keep you user engaged by providing meaningful
@@ -152,7 +152,7 @@ function LandingPage() {
         </div>
         <div className="section section-dark text-center">
           <Container>
-            <h2 className="title">Let's talk about us</h2>
+            <h2 className="title">The team</h2>
             <Row>
               <Col md="4">
                 <Card className="card-profile card-plain">
@@ -160,21 +160,19 @@ function LandingPage() {
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
                         alt="..."
-                        src={require("assets/img/faces/clem-onojeghuo-3.jpg")}
+                        src={require("assets/img/faces/eirik_profile.jpeg")}
                       />
                     </a>
                   </div>
                   <CardBody>
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <div className="author">
-                        <CardTitle tag="h4">Henry Ford</CardTitle>
-                        <h6 className="card-category">Product Manager</h6>
+                        <CardTitle tag="h4">Eirik Albrektsen</CardTitle>
+                        <h6 className="card-category">Web depelopement</h6>
                       </div>
                     </a>
                     <p className="card-description text-center">
-                      Teamwork is so important that it is virtually impossible
-                      for you to reach the heights of your capabilities or make
-                      the money that you want without becoming very good at it.
+                      something.
                     </p>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -197,8 +195,8 @@ function LandingPage() {
                     <Button
                       className="btn-just-icon btn-neutral ml-1"
                       color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
+                      href="https://www.linkedin.com/in/eirik-albrektsen-9a0686147/"
+                      //onClick={e => e.preventDefault()}
                     >
                       <i className="fa fa-linkedin" />
                     </Button>
@@ -211,22 +209,19 @@ function LandingPage() {
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
                         alt="..."
-                        src={require("assets/img/faces/joe-gardner-2.jpg")}
+                        src={require("assets/img/faces/vale_profile.jpeg")}
                       />
                     </a>
                   </div>
                   <CardBody>
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <div className="author">
-                        <CardTitle tag="h4">Sophie West</CardTitle>
-                        <h6 className="card-category">Designer</h6>
+                        <CardTitle tag="h4">Valeria Cardazzi</CardTitle>
+                        <h6 className="card-category">Hardware and communication</h6>
                       </div>
                     </a>
                     <p className="card-description text-center">
-                      A group becomes a team when each member is sure enough of
-                      himself and his contribution to praise the skill of the
-                      others. No one can whistle a symphony. It takes an
-                      orchestra to play it.
+                      Vale something
                     </p>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -249,8 +244,8 @@ function LandingPage() {
                     <Button
                       className="btn-just-icon btn-neutral ml-1"
                       color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
+                      href="https://www.linkedin.com/in/valeria-cardazzi-18690b18a/"
+                      //onClick={e => e.preventDefault()}
                     >
                       <i className="fa fa-linkedin" />
                     </Button>
@@ -263,22 +258,19 @@ function LandingPage() {
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
                         alt="..."
-                        src={require("assets/img/faces/erik-lucatero-2.jpg")}
+                        src={require("assets/img/faces/c_gulli.png")}
                       />
                     </a>
                   </div>
                   <CardBody>
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <div className="author">
-                        <CardTitle tag="h4">Robert Orben</CardTitle>
-                        <h6 className="card-category">Developer</h6>
+                        <CardTitle tag="h4">Costanza Gulli</CardTitle>
+                        <h6 className="card-category">Hardware and Communicaiton</h6>
                       </div>
                     </a>
                     <p className="card-description text-center">
-                      The strength of the team is each individual member. The
-                      strength of each member is the team. If you can laugh
-                      together, you can work together, silence isn’t golden,
-                      it’s deadly.
+                      something_costanza
                     </p>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -301,8 +293,8 @@ function LandingPage() {
                     <Button
                       className="btn-just-icon btn-neutral ml-1"
                       color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
+                      href="https://www.linkedin.com/in/costanza-gulli-b65840194/"
+                      //onClick={e => e.preventDefault()}
                     >
                       <i className="fa fa-linkedin" />
                     </Button>
@@ -316,7 +308,7 @@ function LandingPage() {
           <Container>
             <Row>
               <Col className="ml-auto mr-auto" md="8">
-                <h2 className="text-center">Keep in touch?</h2>
+                <h2 className="text-center">Send us feedback!</h2>
                 <Form className="contact-form">
                   <Row>
                     <Col md="6">

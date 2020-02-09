@@ -35,5 +35,5 @@ def mqtt_publish(path, mqtt_message):
 
 def mqtt_subscribe(host_name, path):
     client.on_message = on_message
-    client.loop()
+    client.loop_start()
     sub.callback(on_message_print, path, hostname=host_name)
