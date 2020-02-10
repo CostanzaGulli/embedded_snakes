@@ -24,7 +24,8 @@ def on_message_print(client, userdata, message):
 
 client = mqtt.Client()
 def mqtt_connect():  
-    return_code = client.connect(constants_mqtt.broker, 1883) #connect(host, port=1883, keepalive=60, bind_address="")
+    client.tls_set(ca_certs="mosquitto.org.crt", certfile="client.crt", keyfile="client.key", tls_version=ssl.PROTOCOL_TLSv1_2) 
+    return_code = client.connect(constants_mqtt.broker, 8884) #connect(host, port=1883, keepalive=60, bind_address="")
     client.on_connect = on_connect
     if return_code == 0:
         print("connection succesful\n")

@@ -1,8 +1,6 @@
 import client
 import json
-
 from firebase import firebase
-
 import constants_mqtt
 
 
@@ -23,6 +21,7 @@ def on_message_func(client, userdata, msg):
 #            "time":1.2,
 #            "user":"Eirik",
 #            "success":True})
+
 client.mqtt_connect()
 client.mqtt_subscribe(constants_mqtt.broker, constants_mqtt.path ,on_message_func)
 
