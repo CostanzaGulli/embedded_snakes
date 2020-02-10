@@ -6,11 +6,15 @@ import RPi.GPIO as GPIO
 
 import mqtt_senddata
 import constants_game
+import random
+
+random.seed()
 
 def game():
     timeout = 5 #set timeout for each action  
     
-    action = int(input('Pick action: '))
+    action = random.randint(1,3)
+    print('action randomly selected is '+str(action)+'\n')
     user_action = 0
     start_action_time = time.time()
     elapsed_action_time = time.time() - start_action_time

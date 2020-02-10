@@ -1,5 +1,5 @@
 import start
-import game 
+import game1
 
 start.start() #set up mqtt connection and input pins
-game.game()
+game1.game()
