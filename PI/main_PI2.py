@@ -47,4 +47,4 @@ while start == False:
     mqtt_subscribe(constants_mqtt.broker, constants_mqtt.path_startgame)
     if #something received:
         start=True
-        #game
+        #game 
