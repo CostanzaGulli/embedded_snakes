@@ -6,6 +6,7 @@ import RPi.GPIO as GPIO
 import mqtt_senddata
 import constants_game
 import random
+import os
 
 def game():
     random.seed()
@@ -18,10 +19,13 @@ def game():
         action_num = random.randint(1,3)
         if action_num == 1:
             action = "Shake"
+            os.system('mpg321 Audio/shake.mp3')
         elif action_num == 2:
             action = "Raise"
+            os.system('mpg321 Audio/raise.mp3')
         else:
             action = "Button"
+            os.system('mpg321 Audio/button.mp3')
         print("Do action:"+action)
         #convert to string
         user_action = 0
