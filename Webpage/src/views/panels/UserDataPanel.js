@@ -15,14 +15,14 @@ const firebase = require("firebase");
 require("firebase/firestore");
 
 const UserPanel = () => {
-    const [successRates, setSuccessRates] = useState({"Shake":0,"Tap":0,"Shout Out":0,"UpsideDown":0});
-    const [avgTimes, setAvgTimes] = useState({"Shake":0,"Tap":0,"Shout Out":0,"UpsideDown":0});
+    const [successRates, setSuccessRates] = useState({"Shake":0,"Raise":0,"Button":0});
+    const [avgTimes, setAvgTimes] = useState({"Shake":0,"Raise":0,"Button":0});
     const [winRate,setWinRate]= useState(0);
     const [avgScore,setAvgScore]= useState(0);
     const [avgTime,setAvgTime]= useState(0);
     const [firebase_initialized,setFirebaseInitialized] = useState(false);
     const [userId,setUserId] = useState("Eirik");
-    const moves=["Shake","Tap","Shout Out","UpsideDown"]
+    const moves=["Shake","Raise","Button"]
     const UserOptions=[
       {key:"Eirik",text:"Eirik",value:"Eirik"},
       {key:"Valeria",text:"Valeria",value:"Valeria"},
@@ -87,8 +87,8 @@ const UserPanel = () => {
           }
           else{
             setAvgTime(0);
-            setSuccessRates({"Shake":0,"Tap":0,"Shout Out":0,"UpsideDown":0});
-            setAvgTimes({"Shake":0,"Tap":0,"Shout Out":0,"UpsideDown":0});
+            setSuccessRates({"Shake":0,"Raise":0,"Button":0});
+            setAvgTimes({"Shake":0,"Raise":0,"Button":0});
           }
       });
       var gamesRef =database.ref("games/"+userId);
@@ -187,7 +187,7 @@ const UserPanel = () => {
                 <b>{avgTime} s</b>
               </Col>
               <Col>
-                <b>Average time</b>
+                <b>Average time!</b>
               </Col>
             </Row>
             </Container>
@@ -202,15 +202,15 @@ const UserPanel = () => {
               </div>
                 <Progress
                   max="100"
-                  value={successRates["UpsideDown"]}
+                  value={successRates["Shake"]}
                   barClassName="win-rate"
                 />
               </Col>
               <Col>
-                <b>{successRates["UpsideDown"]} %</b>
+                <b>{successRates["Shake"]} %</b>
               </Col>
               <Col>
-                <b>Upside down!</b>
+                <b>Shake!</b>
               </Col>
             </Row>
             
@@ -218,13 +218,13 @@ const UserPanel = () => {
               <Col md="6">
               <div style={{ textAlign: "center", height:"0.5em"}}>
               </div>
-              <Progress max="100" value={successRates["Shout Out"]} barClassName="progress-bar-info" />
+              <Progress max="100" value={successRates["Raise"]} barClassName="progress-bar-info" />
               </Col>
               <Col>
-                <b>{successRates["Shout Out"]} %</b>
+                <b>{successRates["Raise"]} %</b>
               </Col>
               <Col>
-                <b>Shout out!</b>
+                <b>Raise!</b>
               </Col>
             </Row>
             <Row style={{height:"3em"}}>
@@ -233,15 +233,15 @@ const UserPanel = () => {
               </div>
               <Progress
                   max="100"
-                  value={successRates["Tap"]}
+                  value={successRates["Button"]}
                   barClassName="progress-bar-danger"
                 />
               </Col>
               <Col>
-                <b>{successRates["Tap"]} %</b>
+                <b>{successRates["Button"]} %</b>
               </Col>
               <Col>
-                <b>Tap it!</b>
+                <b>Button!</b>
               </Col>
             </Row>
             <Row style={{height:"3em"}}>
@@ -272,15 +272,15 @@ const UserPanel = () => {
               </div>
                 <Progress
                   max="5"
-                  value={avgTimes["UpsideDown"]}
+                  value={avgTimes["Shake"]}
                   barClassName="progress-bar-success"
                 />
               </Col>
               <Col>
-                <b>{avgTimes["UpsideDown"]} s</b>
+                <b>{avgTimes["Shake"]} s</b>
               </Col>
               <Col>
-                <b>Upside down!</b>
+                <b>Shake!</b>
               </Col>
             </Row>
             
@@ -288,13 +288,13 @@ const UserPanel = () => {
               <Col md="6">
               <div style={{ textAlign: "center", height:"0.5em"}}>
               </div>
-              <Progress max="5" value={avgTimes["Shout Out"]} barClassName="progress-bar-info" />
+              <Progress max="5" value={avgTimes["Raise"]} barClassName="progress-bar-info" />
               </Col>
               <Col>
-                <b>{avgTimes["Shout Out"]} s</b>
+                <b>{avgTimes["Raise"]} s</b>
               </Col>
               <Col>
-                <b>Shout out!</b>
+                <b>Raise!</b>
               </Col>
             </Row>
             <Row style={{height:"3em"}}>
@@ -303,15 +303,15 @@ const UserPanel = () => {
               </div>
               <Progress
                   max="5"
-                  value={avgTimes["Tap"]} 
+                  value={avgTimes["Button"]} 
                   barClassName="progress-bar-danger"
                 />
               </Col>
               <Col>
-                <b>{avgTimes["Tap"]} s</b>
+                <b>{avgTimes["Button"]} s</b>
               </Col>
               <Col>
-                <b>Tap it!</b>
+                <b>Button!</b>
               </Col>
             </Row>
             <Row style={{height:"3em"}}>

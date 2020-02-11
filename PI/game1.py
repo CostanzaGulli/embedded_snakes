@@ -15,8 +15,14 @@ def game():
     time.sleep(1)
 
     while total_moves < 10:
-        action = random.randint(1,3)
-        print("Do action:"+str(action))
+        action_num = random.randint(1,3)
+        if action_num == 1:
+            action = "Shake"
+        elif action_num == 2:
+            action = "Raise"
+        else:
+            action = "Button"
+        print("Do action:"+action)
         #convert to string
         user_action = 0
         start_action_time = time.time()
