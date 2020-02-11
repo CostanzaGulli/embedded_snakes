@@ -1,4 +1,4 @@
-vale = False
+vale = True
 
 while vale is False:
     print ("ciao costi")
