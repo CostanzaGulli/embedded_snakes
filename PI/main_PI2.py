@@ -22,6 +22,8 @@ def on_message_print(client, userdata, message):
         start=True
         game1.game()
         print("ESCO?")
+        client.unsubscribe(constants_mqtt.path_startgame)
+        print("e ora come la mettiamo?")
 
 client = mqtt.Client()
 def mqtt_connect():  
