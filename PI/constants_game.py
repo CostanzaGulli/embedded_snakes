@@ -1,1 +1,1 @@
-player = "PLAYER3"
+player = "PI2"
