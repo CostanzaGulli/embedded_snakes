@@ -14,6 +14,8 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, msg):
     print(msg.topic+" "+str(msg.payload))
+    if msg.payload.decode() == "START":
+        print("YESSS LETS START")
 
 def on_message_print(client, userdata, message):
     print("%s %s" % (message.topic, message.payload))
