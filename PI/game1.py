@@ -8,12 +8,11 @@ import mqtt_senddata
 import constants_game
 import random
 
-random.seed()
-
 def game():
+    random.seed()
     timeout = 5 #set timeout for each action  
     
-    while True
+    while True:
         action = random.randint(1,3)
         user_action = 0
         start_action_time = time.time()
