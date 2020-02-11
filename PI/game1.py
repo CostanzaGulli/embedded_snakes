@@ -10,8 +10,10 @@ import random
 def game():
     random.seed()
     timeout = 3 # Set timeout for each action  
-    
-    while True:
+    total_moves = 0
+    total_score = 0
+
+    while total_moves < 10:
         action = random.randint(1,3)
         print("Do action:"+str(action))
         #convert to string
@@ -20,7 +22,7 @@ def game():
         elapsed_action_time = time.time() - start_action_time
         action_done = False
         while (elapsed_action_time <= timeout) and (action_done is False):
-            
+
             # Move1 : shake the board
             # Move2 : raise the arm
             if (action_done is False):
@@ -53,7 +55,7 @@ def game():
                     action_done = True
                     user_action = 3 
             elapsed_action_time = time.time() - start_action_time
-
+            
         # When the button is pressed, the board is moved a bit. So check if the botton is presses after 0.1s of the move
         loopstart_time = time.time()
         loop_time = time.time() - loopstart_time
@@ -66,13 +68,20 @@ def game():
    
         # Send mode data to the database. 
         if action_done is False:
-            mqtt_senddata.sendmove(str(action), timeout, constants_game.player, False)
             print("No action")
-        elif user_action == action:
-            mqtt_senddata.sendmove(str(action), elapsed_action_time, constants_game.player, True)
-            print("Right action "+str(action))
-        else:
             mqtt_senddata.sendmove(str(action), timeout, constants_game.player, False)
+        elif user_action == action:
+            print("Right action "+str(action))
+            total_score += 100
+            if elapsed_action_time < 1:
+                total_score += 50
+            print("score = "+str(total_score))
+            mqtt_senddata.sendmove(str(action), elapsed_action_time, constants_game.player, True)
+        else:
             print("Wrong action. Had to do "+str(action)+", done "+str(user_action)+" instead\n")
+            mqtt_senddata.sendmove(str(action), timeout, constants_game.player, False)
+        total_moves += 1
         user_action = 0
         time.sleep(2) #at the end of the move, wait bofore the next
+
+    return total_score
