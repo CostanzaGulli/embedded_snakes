@@ -59,11 +59,10 @@ function LandingPage() {
               <Col className="ml-auto mr-auto" md="8">
                 <h2 className="title">The product</h2>
                 <h5 className="description">
-                  This is the paragraph where you can write more details about
-                  your product. Keep you user engaged by providing meaningful
-                  information. Remember that by this time, the user is curious,
-                  otherwise he wouldn't scroll to get here. Add a button if you
-                  want the user to see more.
+                  SmartSnake is a game which aims at improving your speed of reaction 
+                  to requests from a third party and your precision. This is implemented 
+                  in a game which makes enjoyable turn into useful. The two player option 
+                  turns it into a competition....
                 </h5>
                 <br />
                 <Button

@@ -15,12 +15,12 @@ while True: #program keeps waiting for the beginning of a game
     start=False
     pressed_once = False
     not_pressed_once = False
+    print("To play alone, press button once. To play with Pi2, press button twice.")
 
     while start == False:
         input_state = GPIO.input(10)
         # If the button is pressed once, 1 player
         # If the button is pressed twice, 2 players
-        print("To play alone, press button once. To play with Pi2, press button twice.")
         if (input_state == True) and (not_pressed_once == False):
             pressed_once = True
             print("pressed_once")
