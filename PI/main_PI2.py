@@ -18,7 +18,9 @@ def on_message(client, userdata, msg):
 def on_message_print(client, userdata, message):
     print("ONMESSAGE PRINT"+"%s e anche %s" % (message.topic, message.payload))
     if message.payload.decode() == "START":
-        print("YESSS LETS START")
+        #print("YESSS LETS START")
+        start=True
+        game1.game()
 
 client = mqtt.Client()
 def mqtt_connect():  
@@ -45,6 +47,3 @@ def mqtt_subscribe(host_name, path):
 start = False
 while start == False:
     mqtt_subscribe(constants_mqtt.broker, constants_mqtt.path_startgame)
-    #if #something received:
-     #   start=True
-        #game
