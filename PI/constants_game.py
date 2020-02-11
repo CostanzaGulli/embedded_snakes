@@ -1,1 +1,1 @@
-player = "PLAYER2"
+player = "PLAYER3"

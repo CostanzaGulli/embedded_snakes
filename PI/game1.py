@@ -46,10 +46,10 @@ def game():
                 z_stdev = stdev(z_out)
                 if x_stdev > 10000 or y_stdev > 10000 or z_stdev > 10000:
                     action_done = True
-                    user_action = 1
+                    user_action = "Shake"
                 if (x_stdev > 3000 and x_stdev < 7000) or (y_stdev > 3000 and y_stdev < 7000) or (z_stdev > 3000 and z_stdev < 7000):
                     action_done = True
-                    user_action = 2
+                    user_action = "Raise"
                 x_out.clear()
                 y_out.clear()
                 z_out.clear()
@@ -60,7 +60,7 @@ def game():
                 input_state = GPIO.input(10)
                 if input_state == True:
                     action_done = True
-                    user_action = 3 
+                    user_action = "Button"
             elapsed_action_time = time.time() - start_action_time
             
         # When the button is pressed, the board is moved a bit. So check if the botton is presses after 0.1s of the move
@@ -71,22 +71,22 @@ def game():
             loop_time = time.time() - loopstart_time
             if input_state == True:
                 action_done = True
-                user_action = 3
+                user_action = "Button"
    
         # Send mode data to the database. 
         if action_done is False:
             print("No action")
-            mqtt_senddata.sendmove(str(action), timeout, constants_game.player, False)
+            mqtt_senddata.sendmove(action, timeout, constants_game.player, False)
         elif user_action == action:
             print("Right action "+str(action))
             total_score += 100
             if elapsed_action_time < 1:
                 total_score += 50
             print("score = "+str(total_score))
-            mqtt_senddata.sendmove(str(action), elapsed_action_time, constants_game.player, True)
+            mqtt_senddata.sendmove(action, elapsed_action_time, constants_game.player, True)
         else:
             print("Wrong action. Had to do "+str(action)+", done "+str(user_action)+" instead\n")
-            mqtt_senddata.sendmove(str(action), timeout, constants_game.player, False)
+            mqtt_senddata.sendmove(action, timeout, constants_game.player, False)
         total_moves += 1
         user_action = 0
         time.sleep(2) #at the end of the move, wait bofore the next
