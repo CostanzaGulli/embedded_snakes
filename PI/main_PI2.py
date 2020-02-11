@@ -50,4 +50,4 @@ start.start() #set up mqtt connection and input pins
 start = False
 while start == False:
     mqtt_subscribe(constants_mqtt.broker, constants_mqtt.path_startgame)
-    print("esco2?")
+print("esco2?")

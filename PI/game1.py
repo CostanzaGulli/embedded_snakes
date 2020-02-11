@@ -12,6 +12,7 @@ def game():
     timeout = 3 # Set timeout for each action  
     total_moves = 0
     total_score = 0
+    time.sleep(1)
 
     while total_moves < 10:
         action = random.randint(1,3)
