@@ -22,6 +22,7 @@ def game():
         while (elapsed_action_time <= timeout) and (action_done is False):
             
             # Move1 : shake the board
+            # Move2 : raise the arm
             if (action_done is False):
                 x_out = []
                 y_out = []
@@ -37,31 +38,13 @@ def game():
                 if x_stdev > 10000 or y_stdev > 10000 or z_stdev > 10000:
                     action_done = True
                     user_action = 1
-                x_out.clear()
-                y_out.clear()
-                z_out.clear()
-                elapsed_action_time = time.time() - start_action_time            
-
-            # Move2 : raise the arm
-            if (action_done is False):  
-                x_out = []
-                y_out = []
-                z_out = []
-                for i in range(0,29):
-                    x, y, z = accelerometer_fn.read_xyz()
-                    x_out.append(x)
-                    y_out.append(y)
-                    z_out.append(z)
-                x_stdev = stdev(x_out)
-                y_stdev = stdev(y_out)
-                z_stdev = stdev(z_out)
                 if (x_stdev > 3000 and x_stdev < 7000) or (y_stdev > 3000 and y_stdev < 7000) or (z_stdev > 3000 and z_stdev < 7000):
                     action_done = True
                     user_action = 2
                 x_out.clear()
                 y_out.clear()
                 z_out.clear()
-                elapsed_action_time = time.time() - start_action_time
+                elapsed_action_time = time.time() - start_action_time            
 
             # Move3 : press the button
             if (action_done is False):
