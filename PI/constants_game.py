@@ -1,1 +1,1 @@
-player = "nuovo_nome"
+player = "PLAYER1"

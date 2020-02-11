@@ -20,6 +20,7 @@ def game():
         elapsed_action_time = time.time() - start_action_time
         action_done = False
         while (elapsed_action_time <= timeout) and (action_done is False):
+            
             # Move1 : shake the board
             # Move2 : raise the arm
             if (action_done is False):
