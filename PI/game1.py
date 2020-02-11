@@ -13,7 +13,7 @@ def game():
     
     while True:
         action = random.randint(1,3)
-        print("fai action"+str(action))
+        print("Do action:"+str(action))
         #convert to string
         user_action = 0
         start_action_time = time.time()
@@ -67,12 +67,12 @@ def game():
         # Send mode data to the database. 
         if action_done is False:
             mqtt_senddata.sendmove(str(action), timeout, constants_game.player, False)
-            print("no action")
+            print("No action")
         elif user_action == action:
             mqtt_senddata.sendmove(str(action), elapsed_action_time, constants_game.player, True)
-            print("action giusta"+str(action))
+            print("Right action "+str(action))
         else:
             mqtt_senddata.sendmove(str(action), timeout, constants_game.player, False)
-            print("action sbagliata, dovevi fare"+str(action)+"done"+str(user_action))
+            print("Wrong action. Had to do "+str(action)+", done "+str(user_action)+" instead\n")
         user_action = 0
         time.sleep(2) #at the end of the move, wait bofore the next
