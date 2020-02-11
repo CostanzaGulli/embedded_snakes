@@ -5,7 +5,7 @@ import paho.mqtt.subscribe as sub
 import json
 
 from . import constants_mqtt
-
+import ssl
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
