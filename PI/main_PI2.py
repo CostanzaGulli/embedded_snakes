@@ -25,7 +25,7 @@ def on_message_print(client, userdata, message):
 
 client = mqtt.Client()
 def mqtt_connect():  
-    return_code = client.connect(constants_mqtt.broker, 1883)#POI FA ENCRIPTION
+    return_code = client.connect(constants_mqtt.broker, 8884)#POI FA ENCRIPTION
     client.on_connect = on_connect
     if return_code == 0:
         print("connection succesful\n")
@@ -43,10 +43,8 @@ def mqtt_subscribe(host_name, path):
     client.loop(1)
     sub.callback(on_message_print, path, hostname=host_name)
 
-#start.start() #set up mqtt connection and input pins
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-mqtt_connect()
+start.start() #set up mqtt connection and input pins
+
 start = False
 while start == False:
     mqtt_subscribe(constants_mqtt.broker, constants_mqtt.path_startgame)
