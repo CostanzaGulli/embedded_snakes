@@ -25,11 +25,11 @@ while start == False:
         print("notpressed_once")
         time.sleep(0.1)
         elapsed_start_time = time.time() - start_start_time
-    if (not_pressed_once == True) and elapsed_start_time > 1:
+    if (not_pressed_once == True) and elapsed_start_time > 1: #If the button is pressed once, 1 player
         start=True
         print("GAME 1")
         game1.game()
-    if (not_pressed_once == True) and (input_state == True) and (elapsed_start_time<=1):
+    if (not_pressed_once == True) and (input_state == True) and (elapsed_start_time<=1): #If the button is pressed twice, 2 players
         start=True
         print("GAME 2")
 

@@ -92,4 +92,4 @@ def game():
             mqtt_senddata.sendmove(str(action), timeout, constants_game.player, False)
             print("action sbagliata, dovevi fare"+str(action)+"done"+str(user_action))
         user_action = 0
-        time.sleep(2) #at the end of the move, wait bofore the next
+        time.sleep(2) # At the end of the move, wait bofore the next
