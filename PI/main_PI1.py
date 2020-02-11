@@ -35,3 +35,5 @@ while start == False:
 
         # Send message to Pi1 to start the game.
         cl.mqtt_publish(const.path_startgame, "START")
+
+        # Start Game (at a time?)
