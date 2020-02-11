@@ -13,12 +13,12 @@ def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
 
 def on_message(client, userdata, msg):
-    print(msg.topic+" "+str(msg.payload))
-    if msg.payload.decode() == "START":
-        print("YESSS LETS START")
+    print("ON_MESSAGE"+msg.topic+" "+str(msg.payload))
 
 def on_message_print(client, userdata, message):
-    print("%s %s" % (message.topic, message.payload))
+    print("ONMESSAGE PRINT"+"%s e anche %s" % (message.topic, message.payload))
+    if message.payload.decode() == "START":
+        print("YESSS LETS START")
 
 client = mqtt.Client()
 def mqtt_connect():  
@@ -45,6 +45,6 @@ def mqtt_subscribe(host_name, path):
 start = False
 while start == False:
     mqtt_subscribe(constants_mqtt.broker, constants_mqtt.path_startgame)
-    if #something received:
-        start=True
+    #if #something received:
+     #   start=True
         #game
