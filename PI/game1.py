@@ -20,7 +20,6 @@ def game():
         elapsed_action_time = time.time() - start_action_time
         action_done = False
         while (elapsed_action_time <= timeout) and (action_done is False):
-            
             # Move1 : shake the board
             # Move2 : raise the arm
             if (action_done is False):
@@ -63,7 +62,7 @@ def game():
             if input_state == True:
                 action_done = True
                 user_action = 3
-            
+   
         # Send mode data to the database. 
         if action_done is False:
             mqtt_senddata.sendmove(str(action), timeout, constants_game.player, False)

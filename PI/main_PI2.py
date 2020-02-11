@@ -21,6 +21,7 @@ def on_message_print(client, userdata, message):
         #print("YESSS LETS START")
         start=True
         game1.game()
+        print("ESCO?")
 
 client = mqtt.Client()
 def mqtt_connect():  
@@ -43,7 +44,9 @@ def mqtt_subscribe(host_name, path):
     sub.callback(on_message_print, path, hostname=host_name)
 
 #start.start() #set up mqtt connection and input pins
-
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 start = False
 while start == False:
     mqtt_subscribe(constants_mqtt.broker, constants_mqtt.path_startgame)
+    print("esco2?")
