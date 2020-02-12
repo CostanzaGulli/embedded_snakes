@@ -112,4 +112,7 @@ def game():
         user_action = 0
         time.sleep(2) #at the end of the move, wait before the next one
 
-    return total_score
+    if total_score >= 1000:
+        mqtt_senddata.sendgame(True, total_score, constants_game.player)
+    else:
+        mqtt_senddata.sendgame(False, total_score, constants_game.player)

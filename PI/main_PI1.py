@@ -35,14 +35,11 @@ while True: # program keeps waiting for the beginning of a game
         if (not_pressed_once == True) and elapsed_start_time > 1:
             start=True
             print("1 PLAYER GAME")
-            score = game1.game() #Start game
-            if score >= 1000:
-                mqtt_senddata.sendgame(True, score, constants_game.player)
-            else:
-                mqtt_senddata.sendgame(False, score, constants_game.player)
+            game1.game() #Start game
 
         if (not_pressed_once == True) and (input_state == True) and (elapsed_start_time <= 1): # if the button is pressed twice within one second: two players 
             start = True
             print("2 PLAYERS GAME")
             cl.mqtt_publish(const.path_startgame, "START") # Send message to Pi2 to start the game.
-            score = game1.game() # call function to start the game
+            game1.game() #Start game
+            
