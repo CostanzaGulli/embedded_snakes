@@ -78,21 +78,23 @@ function ProfilePage() {
           <Row>
             <Col className="ml-auto mr-auto text-center" md="6">
               <h5>
-                Explore how Smart Snake 2.0 will be like.
+                Explore how SmartSnake 2.0 will be like.
               </h5>
+              <h6>
+                Coming out soon.
+              </h6>
               <br />
             </Col>
           </Row>
           <br />
         <div className="title">
-          <h3>More moves</h3>
+          <h3>Extra moves</h3>
         </div>
         <div className="typography">
           <p>
-            <ul>
-            <li>Smart Snake 2.0 will have an <strong>improved range of moves</strong>, making the game even mode challenging.</li>
-            <li>The <strong>speed</strong> of the game can be regulated, and the game gets faster as you get better at it.</li>
-            </ul>
+            Smart Snake 2.0 will have an <strong>improved range of moves</strong>, making the game even mode challenging.<br />
+            <strong>Intellignt speed</strong>. The game gets faster as you keep playing. <br />
+            Select the level of difficulty: "Beginner", "Intermediate", "Expert".
           </p>
         </div>
         <div className="title">
@@ -100,17 +102,16 @@ function ProfilePage() {
         </div>
         <div className="typography">
           <p>
-            Further imporvements to the TwoPlayer mode will be made. <br />
-            The game gets faster if your opponent plays well. <br />
-            At the end of the game, you win if your opponent gains less points
+            Further imporvements to the <strong>TwoPlayer</strong> mode will be made. <br />
+            The speed of the game will be adjusted based on the performance of the players. <br />
           </p>
         </div>
         <div className="title">
-          <h3>Easier user interface</h3>
+          <h3>Better user interface</h3>
         </div>
         <div className="typography">
           <p>
-            You will soon be able to enter your Username from the Web App
+            You will soon be able to <strong>enter your Username</strong> from the Web App before the game starts.
           </p>
         </div>
           {/* Tab panes */}

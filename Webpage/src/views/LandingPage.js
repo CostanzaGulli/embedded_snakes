@@ -59,10 +59,8 @@ function LandingPage() {
               <Col className="ml-auto mr-auto" md="8">
                 <h2 className="title">The product</h2>
                 <h5 className="description">
-                  SmartSnake is a game which aims at improving your speed of reaction 
-                  to requests from a third party and your precision. This is implemented 
-                  in a game which makes enjoyable turn into useful. The two player option 
-                  turns it into a competition....
+                  SmartSnake is a game which aims at improving your speed of reaction and your precision of movement. <br />
+                  Play to make useful turn into enjoyable. 
                 </h5>
                 <br />
                 <Button
@@ -101,7 +99,7 @@ function LandingPage() {
                   <div className="description">
                     <h4 className="info-title">The team</h4>
                     <p>
-                      Meet the team that designed Smart Snake.
+                      Meet the team that designed SmartSnake.
                     </p>
                     <Button className="btn-link" color="info" href="/team">
                       See more

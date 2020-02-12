@@ -77,13 +77,14 @@ function ProfilePage() {
               <h4 className="title">
                 Meet the team! <br />
               </h4>
-              <h6 className="description">Electrical Engineers</h6>
+              <h6 className="description">who are we</h6>
             </div>
           </div>
           <Row>
             <Col className="ml-auto mr-auto text-center" md="6">
               <p>
-                We are a group of three Electrical and Electronic Engineering students at Imperial College London.....
+                We are a group of three Electrical and Electronic Engineering students at Imperial College London.
+                This game was designed and implemented as a coursework for the 3rd year module Embedded Systems.
               </p>
               <br />
               
@@ -111,7 +112,7 @@ function ProfilePage() {
                         </div>
                       </a>
                       <p className="card-description text-center">
-                        something.
+                        ea5117@ic.ac.uk
                       </p>
                     </CardBody>
                     <CardFooter className="text-center">
@@ -144,7 +145,7 @@ function ProfilePage() {
                         </div>
                       </a>
                       <p className="card-description text-center">
-                        Vale something
+                        vc1917@ic.ac.uk
                       </p>
                     </CardBody>
                     <CardFooter className="text-center">
@@ -177,7 +178,7 @@ function ProfilePage() {
                         </div>
                       </a>
                       <p className="card-description text-center">
-                        something_costanza
+                      cg3717@ic.ac.uk
                       </p>
                     </CardBody>
                     <CardFooter className="text-center">
