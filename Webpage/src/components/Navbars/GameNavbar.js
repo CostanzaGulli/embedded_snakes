@@ -79,7 +79,7 @@ function IndexNavbar() {
                 //title="Follow us on Twitter"
                 >
                 Product Overview
-                <p className="d-lg-none">Twitter</p>
+                <p className="d-lg-none"></p>
               </NavLink>
             </NavItem>
             <NavItem>
@@ -88,7 +88,7 @@ function IndexNavbar() {
                 //title="Follow us on Twitter"
               >
                 Team
-                <p className="d-lg-none">Twitter</p>
+                <p className="d-lg-none"></p>
               </NavLink>
             </NavItem>
             <NavItem>
@@ -97,7 +97,7 @@ function IndexNavbar() {
                 title="Follow us on Twitter"
               >
                 New ideas
-                <p className="d-lg-none">Twitter</p>
+                <p className="d-lg-none"></p>
               </NavLink>
             </NavItem>
             <NavItem>
@@ -106,7 +106,7 @@ function IndexNavbar() {
                 //title="Follow us on Twitter"
               >
                 App
-                <p className="d-lg-none">Twitter</p>
+                <p className="d-lg-none"></p>
               </NavLink>
             </NavItem>
           </Nav>

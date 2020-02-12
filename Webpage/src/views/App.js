@@ -17,7 +17,7 @@
 
 */
 import socketIOClient from "socket.io-client";
-import GameNavbar from "components/Navbars/GameNavbar.js";
+import Navbar from "components/Navbars/GameNavbar.js";
 import UserDataPanel from "views/panels/UserDataPanel.js";
 import React, { useState, useEffect } from 'react';
 import { Button,Container } from "reactstrap";
@@ -32,7 +32,7 @@ const App = () => {
   });
   return (
     <>
-      <GameNavbar />
+      <Navbar />
       <div style={{height:"100px"}}></div>
       <UserDataPanel/>
    </> 

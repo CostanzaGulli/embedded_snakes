@@ -83,7 +83,7 @@ def game():
         # When the button is pressed, the accelerometer detects the board moving, detecting Shake or Raise insted. So check if the botton is pressed after 0.1s of the deteced move
         loopstart_time = time.time()
         loop_time = time.time() - loopstart_time
-        if action_done is True and (user_action == f1 or user_action == 2) and loop_time < 0.1:
+        if action_done is True and (user_action == "Shake" or user_action == "Raise") and loop_time < 0.1:
             input_state = GPIO.input(10)
             loop_time = time.time() - loopstart_time
 
