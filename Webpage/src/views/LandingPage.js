@@ -85,7 +85,7 @@ function LandingPage() {
                     <p className="description">
                       Explore the technical details of the product.
                     </p>
-                    <Button className="btn-link" color="info" href="/documentation">
+                    <Button className="btn-link" color="info" href="https://github.com/CostanzaGulli/embedded_snakes">
                       Go to GitHub
                     </Button>
                   </div>

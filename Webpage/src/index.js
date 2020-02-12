@@ -28,12 +28,10 @@ import "assets/demo/demo.css";
 // pages
 import Index from "views/Index.js";
 import App from "views/App.js"
-import NucleoIcons from "views/NucleoIcons.js";
 import LandingPage from "views/LandingPage.js";
 import ProfilePage from "views/ProfilePage.js";
-import RegisterPage from "views/examples/RegisterPage.js";
 import TeamView from "views/TeamView.js"
-// others
+
 
 ReactDOM.render(
   <BrowserRouter>
@@ -41,10 +39,6 @@ ReactDOM.render(
       <Route 
         path="/documentation" 
         render={props => <Index {...props} />} 
-      />
-      <Route
-        path="/nucleo-icons"
-        render={props => <NucleoIcons {...props} />}
       />
       <Route
         path="/index"
@@ -57,10 +51,6 @@ ReactDOM.render(
       <Route
         path="/profile"
         render={props => <ProfilePage {...props} />}
-      />
-      <Route
-        path="/register-page"
-        render={props => <RegisterPage {...props} />}
       />
       <Route 
         path="/app" 
