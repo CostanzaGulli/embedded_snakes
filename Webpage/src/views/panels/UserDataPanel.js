@@ -165,7 +165,7 @@ const UserPanel = () => {
               <div style={{ textAlign: "center", height:"0.5em"}}>
               </div>
                 <Progress
-                  max="40000"
+                  max="1500"
                   value={avgScore}
                   barClassName="win-rate"
                 />
@@ -181,7 +181,7 @@ const UserPanel = () => {
               <Col md="6">
               <div style={{ textAlign: "center", height:"0.5em"}}>
               </div>
-              <Progress max="5" value={avgTime} barClassName="progress-bar-info" />
+              <Progress max="3" value={avgTime} barClassName="progress-bar-info" />
               </Col>
               <Col>
                 <b>{avgTime} s</b>
@@ -254,7 +254,7 @@ const UserPanel = () => {
               <div style={{ textAlign: "center", height:"0.5em"}}>
               </div>
                 <Progress
-                  max="5"
+                  max="3"
                   value={avgTimes["Shake"]}
                   barClassName="progress-bar-success"
                 />
@@ -271,7 +271,7 @@ const UserPanel = () => {
               <Col md="6">
               <div style={{ textAlign: "center", height:"0.5em"}}>
               </div>
-              <Progress max="5" value={avgTimes["Raise"]} barClassName="progress-bar-info" />
+              <Progress max="3" value={avgTimes["Raise"]} barClassName="progress-bar-info" />
               </Col>
               <Col>
                 <b>{avgTimes["Raise"]} s</b>
@@ -285,7 +285,7 @@ const UserPanel = () => {
               <div style={{ textAlign: "center", height:"0.5em"}}>
               </div>
               <Progress
-                  max="5"
+                  max="3"
                   value={avgTimes["Button"]} 
                   barClassName="progress-bar-danger"
                 />

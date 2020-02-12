@@ -28,8 +28,32 @@ function SectionTypography() {
     <>
       <Container className="tim-container">
         <div className="title">
-          <h3>Typography</h3>
+          <h3>Game Modes</h3>
         </div>
+        <div className="typography">
+          <p>
+            Smart Snake supports two Game Modes:
+            <ul>
+            <li><strong>OnePlayer</strong>: if this is selected, play alone.</li>
+            <li><strong>TwoPlayer</strong>: play against your friends, trying to win by making the right moves 
+              faster than the other. </li>
+            </ul>
+          </p>
+        </div>
+        <div className="title">
+          <h3>User Interface</h3>
+        </div>
+        <div className="typography">
+          <p>
+            The <strong>web used interface</strong> allows you to access <strong>statistics</strong> on your performance. You just need to enter 
+            your username and you will see data about:
+            <ul>
+            <li>Average win rates, scores and reaction times.</li>
+            <li><strong>Success rates</strong> and <strong>reaction times</strong> for each move. </li>
+            </ul>
+          </p>
+        </div>
+
         <div id="typography">
           <Row>
             <div className="typography-line">
@@ -68,12 +92,7 @@ function SectionTypography() {
                 Thinking in textures
               </h6>
             </div>
-            <div className="typography-line">
-              <p>
-                <span className="note">Paragraph</span>
-                Thinking in textures
-              </p>
-            </div>
+            
             <div className="typography-line">
               <span className="note">Quote</span>
               <blockquote className="blockquote">

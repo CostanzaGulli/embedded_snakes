@@ -69,7 +69,7 @@ function IndexNavbar() {
             data-placement="bottom"
             href="/index"
             target="_blank"
-            title="Coded by Embedded Snakes"
+            title="Coded by Creative Tim"
           >
             Paper Kit React
           </NavbarBrand>

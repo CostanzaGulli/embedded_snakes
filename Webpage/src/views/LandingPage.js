@@ -70,7 +70,7 @@ function LandingPage() {
                   color="info"
                   href="/documentation"
                 >
-                  See Details
+                  Explore More
                 </Button>
               </Col>
             </Row>
@@ -85,10 +85,10 @@ function LandingPage() {
                   <div className="description">
                     <h4 className="info-title">Product Overview</h4>
                     <p className="description">
-                      Explore the details of the product.
+                      Explore the technical details of the product.
                     </p>
                     <Button className="btn-link" color="info" href="/documentation">
-                      See more
+                      Go to GitHub
                     </Button>
                   </div>
                 </div>
