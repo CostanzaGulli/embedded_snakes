@@ -19,7 +19,7 @@
 import React from "react";
 
 // reactstrap components
-import { Container, Row, Col } from "reactstrap";
+import { Button, Container, Row, Col } from "reactstrap";
 
 // core components
 
@@ -27,16 +27,44 @@ function SectionTypography() {
   return (
     <>
       <Container className="tim-container">
+      <div className="title">
+          <h3>About the game</h3>
+        </div>
+        <div className="typography">
+          <p>
+            SmartSnake is a game aimed at combinig fun and useful. 
+            Play by performing the moves in the least amount of time and with the highest degree of precision.
+            There are three moves you will be asked to perform: "Shake!", "Raise!" and "Button".
+            Watch the video to learn the game.
+            <Button className="btn-link" color="info" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+               Watch video
+            </Button>
+          </p>
+        </div>
+        <div className="title">
+          <h3>Game Rules</h3>
+        </div>
+        <div className="typography">
+          <p>
+          You have a maximum of 3s to perform each move.
+          <ul>
+            <li>If you perfom a move correctly, you earn +100 points.</li>
+            <li>If you perform the move within one second, you earn a +50 bonus.</li>
+            <li>If you don't proform any move, your score doesn't change</li>
+            <li>If you perform the wrong move, you get a -20 points penalty</li>
+            </ul>
+          After 10 moves, the game stops. If your total score is more than 1000, you win! If not, try again.
+          </p>
+        </div>
         <div className="title">
           <h3>Game Modes</h3>
         </div>
         <div className="typography">
           <p>
-            Smart Snake supports two Game Modes:
+            SmartSnake supports two Game Modes:
             <ul>
-            <li><strong>OnePlayer</strong>: if this is selected, play alone.</li>
-            <li><strong>TwoPlayer</strong>: play against your friends, trying to win by making the right moves 
-              faster than the other. </li>
+            <li><strong>OnePlayer</strong>: to play alone, press the button once on the main device.</li>
+            <li><strong>TwoPlayers</strong>: to play against a friend, press the button twice on the main device and see who performs better.</li>
             </ul>
           </p>
         </div>
@@ -48,157 +76,15 @@ function SectionTypography() {
             The <strong>web used interface</strong> allows you to access <strong>statistics</strong> on your performance. You just need to enter 
             your username and you will see data about:
             <ul>
-            <li>Average win rates, scores and reaction times.</li>
+            <li><strong>Average win rates</strong>,<strong>scores</strong> and <strong>reaction times</strong>.</li>
             <li><strong>Success rates</strong> and <strong>reaction times</strong> for each move. </li>
             </ul>
+            <Button className="btn-link" color="info" href="/app">
+               Go to app
+            </Button>
           </p>
         </div>
-
-        <div id="typography">
-          <Row>
-            <div className="typography-line">
-              <h1>
-                <span className="note">Header 1</span>
-                Thinking in textures
-              </h1>
-            </div>
-            <div className="typography-line">
-              <h2>
-                <span className="note">Header 2</span>
-                Thinking in textures
-              </h2>
-            </div>
-            <div className="typography-line">
-              <h3>
-                <span className="note">Header 3</span>
-                Thinking in textures
-              </h3>
-            </div>
-            <div className="typography-line">
-              <h4>
-                <span className="note">Header 4</span>
-                Thinking in textures
-              </h4>
-            </div>
-            <div className="typography-line">
-              <h5>
-                <span className="note">Header 5</span>
-                Thinking in textures
-              </h5>
-            </div>
-            <div className="typography-line">
-              <h6>
-                <span className="note">Header 6</span>
-                Thinking in textures
-              </h6>
-            </div>
-            
-            <div className="typography-line">
-              <span className="note">Quote</span>
-              <blockquote className="blockquote">
-                <p className="mb-0">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                  aliquam erat volutpat. Ut wisi enim ad minim veniam.
-                </p>
-                <br />
-                <footer className="blockquote-footer">
-                  Someone famous in{" "}
-                  <cite title="source Title">Source Title</cite>
-                </footer>
-              </blockquote>
-            </div>
-            <div className="typography-line">
-              <span className="note">Muted text</span>
-              <p className="text-muted">
-                Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
-              </p>
-            </div>
-            <div className="typography-line">
-              <span className="note">Primary text</span>
-              <p className="text-primary">
-                Nullam id dolor id nibh ultricies vehicula ut id elit.
-              </p>
-            </div>
-            <div className="typography-line">
-              <span className="note">Success text</span>
-              <p className="text-success">
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-              </p>
-            </div>
-            <div className="typography-line">
-              <span className="note">Info text</span>
-              <p className="text-info">
-                Maecenas sed diam eget risus varius blandit sit amet non magna.
-              </p>
-            </div>
-            <div className="typography-line">
-              <span className="note">Warning text</span>
-              <p className="text-warning">
-                Etiam porta sem malesuada magna mollis euismod.
-              </p>
-            </div>
-            <div className="typography-line">
-              <span className="note">Danger text</span>
-              <p className="text-danger">
-                Donec ullamcorper nulla non metus auctor fringilla.
-              </p>
-            </div>
-            <div className="typography-line">
-              <h2>
-                <span className="note">Small tag</span>
-                Header with small subtitle <br />
-                <small>".small" is a tag for the headers</small>
-              </h2>
-            </div>
-          </Row>
-        </div>
         <br />
-        <div id="images">
-          <Container>
-            <div className="title">
-              <h3>Images</h3>
-            </div>
-            <Row>
-              <Col md="3" sm="6">
-                <h4 className="images-title">Rounded Image</h4>
-                <img
-                  alt="..."
-                  className="img-rounded img-responsive"
-                  src={require("assets/img/uriel-soberanes.jpg")}
-                />
-                <div className="img-details">
-                  <div className="author">
-                    <img
-                      alt="..."
-                      className="img-circle img-no-padding img-responsive"
-                      src={require("assets/img/faces/joe-gardner-2.jpg")}
-                    />
-                  </div>
-                  <p>Sonia Green</p>
-                </div>
-              </Col>
-              <Col className="mr-auto ml-auto" md="2" sm="3">
-                <h4 className="images-title">Circle Image</h4>
-                <img
-                  alt="..."
-                  className="img-circle img-no-padding img-responsive"
-                  src={require("assets/img/faces/kaci-baum-2.jpg")}
-                />
-                <p className="text-center">Brigitte Bardot</p>
-              </Col>
-              <Col className="mr-auto" md="2" sm="3">
-                <h4 className="images-title">Thumbnail</h4>
-                <img
-                  alt="..."
-                  className="img-thumbnail img-responsive"
-                  src={require("assets/img/faces/erik-lucatero-2.jpg")}
-                />
-                <p className="text-center">John Keynes</p>
-              </Col>
-            </Row>
-          </Container>
-        </div>
       </Container>
     </>
   );

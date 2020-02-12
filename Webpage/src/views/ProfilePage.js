@@ -78,23 +78,23 @@ function ProfilePage() {
           <Row>
             <Col className="ml-auto mr-auto text-center" md="6">
               <h5>
-                Explore how Smart Snake 2.0 will be like.
+                Explore how SmartSnake 2.0 will be like.
               </h5>
+              <h6>
+                Coming out soon.
+              </h6>
               <br />
             </Col>
           </Row>
           <br />
         <div className="title">
-          <h3>More moves</h3>
+          <h3>Extra moves</h3>
         </div>
         <div className="typography">
           <p>
-            Smart Snake supports two Game Modes:
-            <ul>
-            <li><strong>OnePlayer</strong>: if this is selected, play alone.</li>
-            <li><strong>TwoPlayer</strong>: play against your friends, trying to win by making the right moves 
-              faster than the other. </li>
-            </ul>
+            Smart Snake 2.0 will have an <strong>improved range of moves</strong>, making the game even mode challenging.<br />
+            <strong>Intellignt speed</strong>. The game gets faster as you keep playing. <br />
+            Select the level of difficulty: "Beginner", "Intermediate", "Expert".
           </p>
         </div>
         <div className="title">
@@ -102,25 +102,16 @@ function ProfilePage() {
         </div>
         <div className="typography">
           <p>
-            Smart Snake supports two Game Modes:
-            <ul>
-            <li><strong>OnePlayer</strong>: if this is selected, play alone.</li>
-            <li><strong>TwoPlayer</strong>: play against your friends, trying to win by making the right moves 
-              faster than the other. </li>
-            </ul>
+            Further imporvements to the <strong>TwoPlayer</strong> mode will be made. <br />
+            The speed of the game will be adjusted based on the performance of the players. <br />
           </p>
         </div>
         <div className="title">
-          <h3>Easier user interface</h3>
+          <h3>Better user interface</h3>
         </div>
         <div className="typography">
           <p>
-            Smart Snake supports two Game Modes:
-            <ul>
-            <li><strong>OnePlayer</strong>: if this is selected, play alone.</li>
-            <li><strong>TwoPlayer</strong>: play against your friends, trying to win by making the right moves 
-              faster than the other. </li>
-            </ul>
+            You will soon be able to <strong>enter your Username</strong> from the Web App before the game starts.
           </p>
         </div>
           {/* Tab panes */}
