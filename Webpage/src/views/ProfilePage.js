@@ -89,11 +89,9 @@ function ProfilePage() {
         </div>
         <div className="typography">
           <p>
-            Smart Snake supports two Game Modes:
             <ul>
-            <li><strong>OnePlayer</strong>: if this is selected, play alone.</li>
-            <li><strong>TwoPlayer</strong>: play against your friends, trying to win by making the right moves 
-              faster than the other. </li>
+            <li>Smart Snake 2.0 will have an <strong>improved range of moves</strong>, making the game even mode challenging.</li>
+            <li>The <strong>speed</strong> of the game can be regulated, and the game gets faster as you get better at it.</li>
             </ul>
           </p>
         </div>
@@ -102,12 +100,9 @@ function ProfilePage() {
         </div>
         <div className="typography">
           <p>
-            Smart Snake supports two Game Modes:
-            <ul>
-            <li><strong>OnePlayer</strong>: if this is selected, play alone.</li>
-            <li><strong>TwoPlayer</strong>: play against your friends, trying to win by making the right moves 
-              faster than the other. </li>
-            </ul>
+            Further imporvements to the TwoPlayer mode will be made. <br />
+            The game gets faster if your opponent plays well. <br />
+            At the end of the game, you win if your opponent gains less points
           </p>
         </div>
         <div className="title">
@@ -115,12 +110,7 @@ function ProfilePage() {
         </div>
         <div className="typography">
           <p>
-            Smart Snake supports two Game Modes:
-            <ul>
-            <li><strong>OnePlayer</strong>: if this is selected, play alone.</li>
-            <li><strong>TwoPlayer</strong>: play against your friends, trying to win by making the right moves 
-              faster than the other. </li>
-            </ul>
+            You will soon be able to enter your Username from the Web App
           </p>
         </div>
           {/* Tab panes */}
