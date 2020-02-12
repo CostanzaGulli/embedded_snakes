@@ -110,6 +110,6 @@ def game():
 
         total_moves += 1
         user_action = 0
-        time.sleep(2) #at the end of the move, wait bofore the next one
+        time.sleep(2) #at the end of the move, wait before the next one
 
     return total_score

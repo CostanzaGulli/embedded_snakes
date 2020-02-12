@@ -51,7 +51,7 @@ function IndexNavbar() {
             data-placement="bottom"
             href="/index"
             target="_blank"
-            title="Coded by Creative Tim"
+            title="Coded by Embedded Snakes"
           >
             Embedded Snakes
           </NavbarBrand>
@@ -76,27 +76,18 @@ function IndexNavbar() {
             <NavItem>
                 <NavLink to="/documentation"
                 tag={Link}
-                title="Follow us on Twitter"
+                //title="Follow us on Twitter"
                 >
-                documentation
+                Product Overview
                 <p className="d-lg-none">Twitter</p>
               </NavLink>
             </NavItem>
             <NavItem>
                 <NavLink to="/team"
                 tag={Link}
-                title="Follow us on Twitter"
+                //title="Follow us on Twitter"
               >
                 Team
-                <p className="d-lg-none">Twitter</p>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink to="/app"
-                tag={Link}
-                title="Follow us on Twitter"
-              >
-                App
                 <p className="d-lg-none">Twitter</p>
               </NavLink>
             </NavItem>
@@ -105,7 +96,16 @@ function IndexNavbar() {
                 tag={Link}
                 title="Follow us on Twitter"
               >
-                Profile
+                New ideas
+                <p className="d-lg-none">Twitter</p>
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/app"
+                tag={Link}
+                //title="Follow us on Twitter"
+              >
+                App
                 <p className="d-lg-none">Twitter</p>
               </NavLink>
             </NavItem>
