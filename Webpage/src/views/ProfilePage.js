@@ -66,7 +66,7 @@ function ProfilePage() {
               <img
                 alt="..."
                 className="img-circle img-no-padding img-responsive"
-                src={require("assets/img/faces/joe-gardner-2.jpg")}
+                src={require("assets/img/light.jpg")}
               />
             </div>
             <div className="name">

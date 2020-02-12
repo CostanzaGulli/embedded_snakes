@@ -29,8 +29,8 @@ import "assets/demo/demo.css";
 import Index from "views/Index.js";
 import App from "views/App.js"
 import NucleoIcons from "views/NucleoIcons.js";
-import LandingPage from "views/examples/LandingPage.js";
-import ProfilePage from "views/examples/ProfilePage.js";
+import LandingPage from "views/LandingPage.js";
+import ProfilePage from "views/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
 import TeamView from "views/TeamView.js"
 // others

@@ -53,8 +53,8 @@ function LandingPageHeader() {
         <div className="filter" />
         <Container>
           <div className="motto text-center">
-            <h1>Smart ...</h1>
-            <h3>Start designing your landing page here.</h3>
+            <h1>SmartSnake</h1>
+            <h3>The precision game</h3>
             <br />
             <Button
               href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
@@ -66,9 +66,7 @@ function LandingPageHeader() {
               <i className="fa fa-play" />
               Watch video
             </Button>
-            <Button className="btn-round" color="neutral" type="button" outline>
-              Download
-            </Button>
+            
           </div>
         </Container>
       </div>

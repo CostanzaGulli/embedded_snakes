@@ -20,6 +20,10 @@ import React from "react";
 
 // reactstrap components
 import {
+  Card,
+  CardBody,
+  CardFooter,
+  CardTitle,
   Button,
   Label,
   FormGroup,
@@ -66,7 +70,7 @@ function ProfilePage() {
               <img
                 alt="..."
                 className="img-circle img-no-padding img-responsive"
-                src={require("assets/img/faces/joe-gardner-2.jpg")}
+                src={require("assets/img/snake.jpg")}
               />
             </div>
             <div className="name">
@@ -79,66 +83,119 @@ function ProfilePage() {
           <Row>
             <Col className="ml-auto mr-auto text-center" md="6">
               <p>
-                An artist of considerable range, Jane Faker — the name taken by
-                Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
-                and records all of his own music, giving it a warm, intimate
-                feel with a solid groove structure.
+                We are a group of three Electrical and Electronic Engineering students at Imperial College London.....
               </p>
               <br />
-              <Button className="btn-round" color="default" outline>
-                <i className="fa fa-cog" /> Settings
-              </Button>
+              
             </Col>
           </Row>
-          <div id="images">
-          <Container>
-            <div className="title">
-              <h3>Images</h3>
-            </div>
-            <Row>
-              <Col md="3" sm="6">
-                <h4 className="images-title">Rounded Image</h4>
-                <img
-                  alt="..."
-                  className="img-rounded img-responsive"
-                  src={require("assets/img/uriel-soberanes.jpg")}
-                />
-                <div className="img-details">
-                  <div className="author">
-                    <img
-                      alt="..."
-                      className="img-circle img-no-padding img-responsive"
-                      src={require("assets/img/faces/joe-gardner-2.jpg")}
-                    />
-                  </div>
-                  <p>Sonia Green</p>
-                  <p>TODO: WRITE text here</p>
-                </div>
-              </Col>
-              <Col className="mr-auto ml-auto" md="2" sm="3">
-                <h4 className="images-title">Circle Image</h4>
-                <img
-                  alt="..."
-                  className="img-circle img-no-padding img-responsive"
-                  src={require("assets/img/faces/kaci-baum-2.jpg")}
-                />
-                <p className="text-center">Brigitte Bardot</p>
-                <p>TODO: WRITE text here</p>
-
-              </Col>
-              <Col className="mr-auto" md="2" sm="3">
-                <h4 className="images-title">Thumbnail</h4>
-                <img
-                  alt="..."
-                  className="img-thumbnail img-responsive"
-                  src={require("assets/img/faces/erik-lucatero-2.jpg")}
-                />
-                <p className="text-center">John Keynes</p>
-                <p>TODO: WRITE text here</p>
-              </Col>
-            </Row>
-          </Container>
+          <div className="section section-dark text-center">
+            <Container>
+              <h2 className="title">The Snakes</h2>
+              <Row>
+                <Col md="4">
+                  <Card className="card-profile card-plain">
+                    <div className="card-avatar">
+                      <a href="#pablo" onClick={e => e.preventDefault()}>
+                        <img
+                          alt="..."
+                          src={require("assets/img/faces/eirik_profile.jpeg")}
+                        />
+                      </a>
+                    </div>
+                    <CardBody>
+                      <a href="#pablo" onClick={e => e.preventDefault()}>
+                        <div className="author">
+                          <CardTitle tag="h4">Eirik Albrektsen</CardTitle>
+                          <h6 className="card-category">Web depelopement</h6>
+                        </div>
+                      </a>
+                      <p className="card-description text-center">
+                        something.
+                      </p>
+                    </CardBody>
+                    <CardFooter className="text-center">
+                      <Button
+                        className="btn-just-icon btn-neutral ml-1"
+                        color="link"
+                        href="https://www.linkedin.com/in/eirik-albrektsen-9a0686147/"
+                        //onClick={e => e.preventDefault()}
+                      >
+                        <i className="fa fa-linkedin" />
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </Col>
+                <Col md="4">
+                  <Card className="card-profile card-plain">
+                    <div className="card-avatar">
+                      <a href="#pablo" onClick={e => e.preventDefault()}>
+                        <img
+                          alt="..."
+                          src={require("assets/img/faces/vale_profile.jpeg")}
+                        />
+                      </a>
+                    </div>
+                    <CardBody>
+                      <a href="#pablo" onClick={e => e.preventDefault()}>
+                        <div className="author">
+                          <CardTitle tag="h4">Valeria Cardazzi</CardTitle>
+                          <h6 className="card-category">Hardware and communication</h6>
+                        </div>
+                      </a>
+                      <p className="card-description text-center">
+                        Vale something
+                      </p>
+                    </CardBody>
+                    <CardFooter className="text-center">
+                      <Button
+                        className="btn-just-icon btn-neutral ml-1"
+                        color="link"
+                        href="https://www.linkedin.com/in/valeria-cardazzi-18690b18a/"
+                        //onClick={e => e.preventDefault()}
+                      >
+                        <i className="fa fa-linkedin" />
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </Col>
+                <Col md="4">
+                  <Card className="card-profile card-plain">
+                    <div className="card-avatar">
+                      <a href="#pablo" onClick={e => e.preventDefault()}>
+                        <img
+                          alt="..."
+                          src={require("assets/img/faces/c_gulli.png")}
+                        />
+                      </a>
+                    </div>
+                    <CardBody>
+                      <a href="#pablo" onClick={e => e.preventDefault()}>
+                        <div className="author">
+                          <CardTitle tag="h4">Costanza Gulli</CardTitle>
+                          <h6 className="card-category">Hardware and Communicaiton</h6>
+                        </div>
+                      </a>
+                      <p className="card-description text-center">
+                        something_costanza
+                      </p>
+                    </CardBody>
+                    <CardFooter className="text-center">
+                      <Button
+                        className="btn-just-icon btn-neutral ml-1"
+                        color="link"
+                        href="https://www.linkedin.com/in/costanza-gulli-b65840194/"
+                        //onClick={e => e.preventDefault()}
+                      >
+                        <i className="fa fa-linkedin" />
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </Col>
+              </Row>
+            </Container>
           </div>
+          
         </Container>
           {/* Tab panes */}
       </div>

@@ -157,7 +157,7 @@ const UserPanel = () => {
                 <b>{winRate} %</b>
               </Col>
               <Col>
-                <b>Win rate!</b>
+                <b>Win rate</b>
               </Col>
             </Row>
             <Row style={{height:"3em"}}>
@@ -174,7 +174,7 @@ const UserPanel = () => {
                 <b>{avgScore}</b>
               </Col>
               <Col>
-                <b>Average Score!</b>
+                <b>Average Score</b>
               </Col>
             </Row>
             <Row style={{height:"3em"}}>
@@ -187,7 +187,7 @@ const UserPanel = () => {
                 <b>{avgTime} s</b>
               </Col>
               <Col>
-                <b>Average time!</b>
+                <b>Average time</b>
               </Col>
             </Row>
             </Container>
@@ -244,23 +244,6 @@ const UserPanel = () => {
                 <b>Button!</b>
               </Col>
             </Row>
-            <Row style={{height:"3em"}}>
-              <Col md="6">
-              <div style={{ textAlign: "center", height:"0.5em"}}>
-              </div>
-                  <Progress
-                    barClassName="progress-bar-success"
-                    max="100"
-                    value= {successRates["Shake"]}
-                  />
-              </Col>
-              <Col>
-                <b>{successRates["Shake"]} %</b>
-              </Col>
-              <Col>
-                <b>Shake it</b>
-              </Col>
-            </Row>
           </Container>
         </div>{" "}
         <div className="time-rates">
@@ -312,23 +295,6 @@ const UserPanel = () => {
               </Col>
               <Col>
                 <b>Button!</b>
-              </Col>
-            </Row>
-            <Row style={{height:"3em"}}>
-              <Col md="6">
-              <div style={{ textAlign: "center", height:"0.5em"}}>
-              </div>
-                  <Progress
-                    barClassName="progress-bar-success"
-                    max="5"
-                    value={avgTimes["Shake"]} 
-                  />
-              </Col>
-              <Col>
-                <b>{avgTimes["Shake"]} s </b>
-              </Col>
-              <Col>
-                <b>Shake it</b>
               </Col>
             </Row>
           </Container>
