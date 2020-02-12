@@ -1,2 +1,2 @@
 # input here name of player
-player = "PI2"
+player = "PI1"

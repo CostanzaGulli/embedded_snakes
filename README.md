@@ -18,7 +18,8 @@ How to run the game
 
 * Running the devices  
     1. Power ON the two Raspberry Pi, switching on the power supply  
-    2. Connect earphones to the two devices   
+    2. Connect earphones to the two devices
+    3. Run 'subcriber.py' in 'Subscriber_on_pc/firestoreMqttclient_onpc' directory
 
 * Playing the game: ONE PLAYER GAME  
     1. Go to the 'PI' directory

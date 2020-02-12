@@ -21,7 +21,7 @@ const UserPanel = () => {
     const [avgScore,setAvgScore]= useState(0);
     const [avgTime,setAvgTime]= useState(0);
     const [firebase_initialized,setFirebaseInitialized] = useState(false);
-    const [userId,setUserId] = useState("Eirik");
+    const [userId,setUserId] = useState("PI1");
     const moves=["Shake","Raise","Button"]
     const UserOptions=[
       {key:"Eirik",text:"Eirik",value:"Eirik"},
