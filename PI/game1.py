@@ -105,6 +105,7 @@ def game():
             mqtt_senddata.sendmove(action, elapsed_action_time, constants_game.player, True)
 
         else:
+            total_score -= 20 # -20 penalty for performing wrong action
             print("Wrong action. Had to do "+str(action)+ ", done "+str(user_action)+" instead\n") # wrong move is detected
             mqtt_senddata.sendmove(action, timeout, constants_game.player, False)
 

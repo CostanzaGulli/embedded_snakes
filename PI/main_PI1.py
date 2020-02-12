@@ -35,8 +35,8 @@ while True: # program keeps waiting for the beginning of a game
         if (not_pressed_once == True) and elapsed_start_time > 1:
             start=True
             print("1 PLAYER GAME")
-            score = game1.game() #Start game
-            if score >= 1000:
+            score = game1.game() # Start game
+            if score >= 1000: # Win if you score more than 1000 points
                 mqtt_senddata.sendgame(True, score, constants_game.player)
             else:
                 mqtt_senddata.sendgame(False, score, constants_game.player)
