@@ -1,22 +1,23 @@
 from . import constants_accelerometer as constants
 import smbus
 
+# to read data from accelerometer
 def read_xyz():
     bus = smbus.SMBus(1)
     I2C_Address = constants.ACCELEROMETER_ADDRESS
 
-    #data_rate = 0b0010
     data_rate = 0b0111
     x_enable = 0b1
     y_enable = 0b1
     z_enable = 0b1
-    fs = 0b00 #Full-scale selection.(00: ±2 g; 01: ±4 g; 10: ±8 g; 11: ±16 g)
+    fs = 0b00 # Full-scale selection
     
     control1 = (data_rate<<4) + (0b0<<3) + (z_enable<<2) + (y_enable<<1) + x_enable
     control2 = (0b00<<6) + (fs<<4) + 0b0000
-    bus.write_byte_data(I2C_Address, constants.CTRL_REG1, control1) #write_byte_data(address, offset, data)
+    bus.write_byte_data(I2C_Address, constants.CTRL_REG1, control1) # write_byte_data(address, offset, data)
     bus.write_byte_data(I2C_Address, constants.CTRL_REG4, control2)
 
+    # two bits per coordinate
     data_x0 = bus.read_byte_data(I2C_Address, constants.X_LSB)
     data_x1 = bus.read_byte_data(I2C_Address, constants.X_MSB)
     data_y0 = bus.read_byte_data(I2C_Address, constants.Y_LSB)
@@ -24,7 +25,7 @@ def read_xyz():
     data_z0 = bus.read_byte_data(I2C_Address, constants.Z_LSB)
     data_z1 = bus.read_byte_data(I2C_Address, constants.Z_MSB)
 
-    #2's compelment conversion
+    # 2's compelment conversion
     xAccl = data_x1 * 256 + data_x0
     if xAccl > 32767 :
         xAccl -= 65536
