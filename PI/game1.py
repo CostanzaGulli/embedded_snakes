@@ -16,7 +16,8 @@ def game():
     total_score = 0
     time.sleep(1)
     os.system('mpg321 Audio/startgame.mp3')
-
+    time.sleep(1)
+    
     while total_moves < 10: # 10 moves in one game
 
         action_num = random.randint(1,3) # generate move randomly
