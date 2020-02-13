@@ -57,7 +57,7 @@ function LandingPageHeader() {
             <h3>The precision game</h3>
             <br />
             <Button
-              href="https://www.youtube.com/channel/UCl8fDwctPyqq-5mpsHFH0QA"
+              href="https://www.youtube.com/watch?v=Wi0IGsF9Pvg"
               className="btn-round mr-1"
               color="neutral"
               target="_blank"
