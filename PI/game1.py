@@ -15,7 +15,7 @@ def game():
     total_moves = 0
     total_score = 0
     time.sleep(1)
-
+    os.system('mpg321 Audio/startgame.mp3')
 
     while total_moves < 10: # 10 moves in one game
 
